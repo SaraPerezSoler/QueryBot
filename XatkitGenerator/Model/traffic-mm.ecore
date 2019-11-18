@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="traffic" nsURI="traffic" nsPrefix="traffic">
+  <eClassifiers xsi:type="ecore:EClass" name="City">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="districts" upperBound="-1"
+        eType="#//District" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="District">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="streets" upperBound="-1"
+        eType="#//Street" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transitable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasCyclistPath" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intensity" eType="#//TrafficIntensity"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incidents" upperBound="-1"
+        eType="#//Incident" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Street" eSuperTypes="#//Transitable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+        eType="#//Section"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//Transitable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TrafficIntensity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceLevel" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Incident" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="estimated" eType="#//TimeInterval"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="real" eType="#//TimeInterval"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoadWork" eSuperTypes="#//Incident"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Closed" eSuperTypes="#//Incident"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Accident" eSuperTypes="#//Incident">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="injuries" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bottleneck" eSuperTypes="#//Incident">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="causes" upperBound="-1"
+        eType="#//Incident"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeInterval">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ServiceLevel">
+    <eLiterals name="moving"/>
+    <eLiterals name="heavy" value="1" literal="heavy"/>
+    <eLiterals name="jam" value="2" literal="jam"/>
+    <eLiterals name="closed" value="3" literal="closed"/>
+  </eClassifiers>
+</ecore:EPackage>

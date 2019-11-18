@@ -1,0 +1,40 @@
+Library GreetingsBotLibrary
+
+// Entity examples
+
+composite Attribute {
+	value StringAttribute
+	value IntegerAttribute
+	// Dumb example for multi entity values
+	value address "in " city
+}
+
+mapping StringAttribute {
+	value name synonyms: "given name" "first name"
+	value id synonyms: "identifier"
+}
+
+mapping IntegerAttribute {
+	value "age"
+}
+
+intent Welcome {
+	inputs {
+		"Hi, I want to access the attribute NAME"
+		"Hello"
+		"Good morning"
+		"Good afternoon"
+	}
+	creates context Attribute {
+		sets parameter name from fragment NAME (entity Attribute)
+	}
+}
+
+intent HowAreYou {
+	inputs {
+		"How are you?"
+		"What's up?"
+		"How do you feel?"
+	}
+}
+

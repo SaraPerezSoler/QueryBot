@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/XatkitGenerator/src" modelPluginID="XatkitGenerator"
+    modelName="MetamodelInfo" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>metamodelInfo.ecore</foreignModel>
+  <genPackages prefix="ModelInfo" disposableProviderFactory="true" ecorePackage="metamodelInfo.ecore#/">
+    <genClasses ecoreClass="metamodelInfo.ecore#//NLModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelInfo.ecore#//NLModel/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelInfo.ecore#//NLModel/model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelInfo.ecore#//NLModel/classes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="metamodelInfo.ecore#//NLElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelInfo.ecore#//NLElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelInfo.ecore#//NLElement/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelInfo.ecore#//NLElement/synonyms"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodelInfo.ecore#//NLClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelInfo.ecore#//NLClass/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelInfo.ecore#//NLClass/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelInfo.ecore#//NLClass/features"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="metamodelInfo.ecore#//NLFeature"/>
+    <genClasses ecoreClass="metamodelInfo.ecore#//NLAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelInfo.ecore#//NLAttribute/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodelInfo.ecore#//NLReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelInfo.ecore#//NLReference/reference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelInfo.ecore#//NLReference/srcSynonyms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelInfo.ecore#//NLReference/verb"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelInfo.ecore#//NLReference/srcVerb"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
