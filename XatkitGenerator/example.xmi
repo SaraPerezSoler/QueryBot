@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<intent:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:intent="com.xatkit.intent" name="GreetingsBotLibrary">
+  <customEntities xsi:type="intent:CompositeEntityDefinition" name="Attribute">
+    <entries>
+      <fragments xsi:type="intent:EntityTextFragment">
+        <entityReference xsi:type="intent:CustomEntityDefinitionReference" customEntity="//@customEntities.1"/>
+      </fragments>
+    </entries>
+    <entries>
+      <fragments xsi:type="intent:EntityTextFragment">
+        <entityReference xsi:type="intent:CustomEntityDefinitionReference" customEntity="//@customEntities.2"/>
+      </fragments>
+    </entries>
+    <entries>
+      <fragments xsi:type="intent:EntityTextFragment">
+        <entityReference xsi:type="intent:BaseEntityDefinitionReference">
+          <baseEntity entityType="address"/>
+        </entityReference>
+      </fragments>
+      <fragments xsi:type="intent:LiteralTextFragment" value="in "/>
+      <fragments xsi:type="intent:EntityTextFragment">
+        <entityReference xsi:type="intent:BaseEntityDefinitionReference">
+          <baseEntity entityType="city"/>
+        </entityReference>
+      </fragments>
+    </entries>
+  </customEntities>
+  <customEntities xsi:type="intent:MappingEntityDefinition" name="StringAttribute">
+    <entries referenceValue="name">
+      <synonyms>given name</synonyms>
+      <synonyms>first name</synonyms>
+    </entries>
+    <entries referenceValue="id">
+      <synonyms>identifier</synonyms>
+    </entries>
+  </customEntities>
+  <customEntities xsi:type="intent:MappingEntityDefinition" name="IntegerAttribute">
+    <entries referenceValue="age"/>
+  </customEntities>
+  <eventDefinitions xsi:type="intent:IntentDefinition" name="Welcome">
+    <outContexts name="Attribute">
+      <parameters name="name" textFragment="NAME">
+        <entity xsi:type="intent:CustomEntityDefinitionReference" customEntity="//@customEntities.0"/>
+      </parameters>
+    </outContexts>
+    <trainingSentences>Hi, I want to access the attribute NAME</trainingSentences>
+    <trainingSentences>Hello</trainingSentences>
+    <trainingSentences>Good morning</trainingSentences>
+    <trainingSentences>Good afternoon</trainingSentences>
+  </eventDefinitions>
+  <eventDefinitions xsi:type="intent:IntentDefinition" name="HowAreYou">
+    <trainingSentences>How are you?</trainingSentences>
+    <trainingSentences>What's up?</trainingSentences>
+    <trainingSentences>How do you feel?</trainingSentences>
+  </eventDefinitions>
+</intent:Library>

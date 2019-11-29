@@ -8,7 +8,6 @@ import modelInfo.ModelInfoPackage;
 import modelInfo.NLClass;
 import modelInfo.NLModel;
 import modelInfo.NLReference;
-import modelInfo.impl.NLAttributeImpl.Types;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -21,6 +20,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
+import Utils.Utils.Types;
 
 /**
  * <!-- begin-user-doc -->
@@ -291,17 +292,9 @@ public class NLReferenceImpl extends NLFeatureImpl implements NLReference {
 	}
 
 	@Override
-	public String getType() {
+	public Types getType() {
 		NLClass nlclass = getModelContainer().getClass(reference.getEReferenceType());
 		return nlclass.getId().get(0).getType();
-	}
-
-	@Override
-	public boolean isType(Types string) {
-		if (getType().equals(string.getName())) {
-			return true;
-		}
-		return false;
 	}
 	
 	private NLModel getModelContainer() {

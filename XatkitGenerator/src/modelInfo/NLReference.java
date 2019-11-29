@@ -6,7 +6,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EReference;
 
-import modelInfo.impl.NLAttributeImpl.Types;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,7 +85,5 @@ public interface NLReference extends NLFeature {
 	 */
 	EList<String> getSrcVerb();
 
-
-	boolean isType(Types string);
 
 } // NLReference

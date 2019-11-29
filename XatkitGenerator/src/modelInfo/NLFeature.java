@@ -2,6 +2,7 @@
  */
 package modelInfo;
 
+import Utils.Utils.Types;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,5 +16,5 @@ package modelInfo;
  */
 public interface NLFeature extends NLElement {
 
-	String getType();
+	Types getType();
 } // NLFeature

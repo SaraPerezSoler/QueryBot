@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import Utils.Utils.Types;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>NL Attribute</b></em>'.
@@ -28,18 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
 	
-	public enum Types {
-		INT("int"), STRING("java.lang.String"), BOOLEAN("boolean"), DATE("java.util.Date"), FLOAT("float");
-		
-		private String name;
-		private Types(String type) {
-			this.name = type;
-		}
-		
-		public String getName() {
-			return name;
-		}
-	}
+
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -168,17 +159,10 @@ public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
 		return super.eIsSet(featureID);
 	}
 
-	@Override
-	public boolean isType(Types type) {
-		if (this.attribute.getEType().getInstanceTypeName().equalsIgnoreCase(type.getName())) {
-			return true;
-		}
-		return false;
-	}
 
 	@Override
-	public String getType() {
-		return this.attribute.getEType().getInstanceTypeName();
+	public Types getType() {
+		return Types.valueOf(this.attribute.getEType().getInstanceTypeName());
 	}
 
 	

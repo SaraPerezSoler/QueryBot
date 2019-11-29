@@ -12,42 +12,43 @@ composite Reference {
 	value BooleanReference
 }
 
-mapping StringComparator{
+"StringComparators" : "mapping StringComparator{
 	value "starts with" synonyms: "starts with" "starting with"  
 	value "ends with" 	synonyms: "ends with" "ending with"
 	value "contains"	synonyms: "contains" "containing"
 	value "equals"		synonyms: "equals" "like" "is" "equals to" "same as"
-}
-mapping NumericalComparator{
+}"
+
+"NumericalComparator" : "mapping NumericalComparator{
 	value "greater than"  	synonyms: "bigger than" 
 	value "lower than" 		synonyms: "smaller than" 
 	value "equals" 			synonyms: "equals" "like" "is" "equals to" "same as"
 	value "contains"	synonyms: "contains" "containing"
-}
+}"
 
-mapping DateComparator{
+"DateComparator" : "mapping DateComparator{
 	value "greater than"  	synonyms: "bigger than" 
 	value "lower than" 		synonyms: "smaller than" 
 	value "equals" 			synonyms: "equals" "like" "is" "equals to" "same as"
 	value "contains"	synonyms: "contains" "containing"
-}
+}"
 
-mapping BooleanOperator{
+"BooleanOperator" : "mapping BooleanOperator{
 
-	value and 		synonyms: "AND"
-	value or 		synonyms: "OR"
-}
+	value "and" 	synonyms: "AND"
+	value "or" 		synonyms: "OR"
+}"
 
-mapping BooleanValue{
+"BooleanValue" : "mapping BooleanValue{
 
-	value true 		synonyms: "is"
-	value false 	synonyms: "is not" "isn't"
-}
+	value "true" 		synonyms: "is"
+	value "false"		synonyms: "is not" "isn't"
+}"
 
-mapping EmptyValue{
-	value unset		synonyms: "empty" "not defined" "not set"
-	value set		synonyms: "not empty" "defined"  
-}
+"EmptyValue" : "mapping EmptyValue{
+	value "unset"		synonyms: "empty" "not defined" "not set"
+	value "set"		synonyms: "not empty" "defined"  
+}"
 
 composite condition {
 	 value Attribute "is " EmptyValue

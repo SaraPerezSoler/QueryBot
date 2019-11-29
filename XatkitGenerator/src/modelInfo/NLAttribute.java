@@ -4,7 +4,6 @@ package modelInfo;
 
 import org.eclipse.emf.ecore.EAttribute;
 
-import modelInfo.impl.NLAttributeImpl.Types;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,9 +44,6 @@ public interface NLAttribute extends NLFeature {
 	 */
 	void setAttribute(EAttribute value);
 
-	boolean isType(Types type);
-
-	String getType();
 
 	
 

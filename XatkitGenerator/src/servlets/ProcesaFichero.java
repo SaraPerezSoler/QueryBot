@@ -27,14 +27,17 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import Utils.Utils;
+import Xatkit.XatkitPackage;
 import modelInfo.ModelInfoFactory;
+import modelInfo.ModelInfoPackage;
 import modelInfo.NLAttribute;
 import modelInfo.NLClass;
 import modelInfo.NLModel;
 import modelInfo.NLReference;
 import net.didion.jwnl.data.POS;
 import synonyms.WordNet;
-import xatkitgen.ModelInfoToXatkit;
+import xatkitgen.ModelInfoToXatkitCopy;
 
 /**
  * Servlet implementation class ProcesaFichero
@@ -109,7 +112,7 @@ public class ProcesaFichero extends HttpServlet {
 		RequestDispatcher jsp;
         jsp = getServletContext().getRequestDispatcher("/Configurator.jsp");
         jsp.forward(request, response);*/
-		ModelInfoToXatkit generator = new ModelInfoToXatkit(model, OUT, MAPPING_FILE);
+		ModelInfoToXatkitCopy generator = new ModelInfoToXatkitCopy(model, OUT, MAPPING_FILE);
 		System.out.println(generator.genereteEntities());
 	}
 
@@ -136,7 +139,8 @@ public class ProcesaFichero extends HttpServlet {
 		URI uri = URI.createURI(path);
 		
 		
-		Resource resource = getResourceSet().getResource(uri, true);
+		
+		Resource resource = Utils.getResourceSet().getResource(uri, true);
 
  		EObject object = resource.getContents().get(0);
 		
@@ -252,16 +256,7 @@ private NLAttribute createNLAttribute(ServletContext context, NLModel model, EAt
 		return nlAttribute;
 	}
 
-	public static ResourceSet getResourceSet() {
-		if (resourceSet == null) {
-			resourceSet = new ResourceSetImpl();
-			// Especificamos la extension del fichero (para todos los ficheros),
-			// y indicamos que
-			// es un XMI.
-			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
-		}
-		return resourceSet;
-	}
+
 	
 	private List<String> getSynonyms (ServletContext context, String word){
 		try {

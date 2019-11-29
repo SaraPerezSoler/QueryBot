@@ -10,7 +10,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: modelInfo,
  modelInfo.impl,
- modelInfo.util
+ modelInfo.util,
+ Xatkit,
+ Xatkit.impl,
+ Xatkit.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
