@@ -45,7 +45,7 @@ import Utils.Utils;
  * @generated
  */
 public class XatkitBotImpl extends MinimalEObjectImpl.Container implements XatkitBot {
-	public static  String queryBotPath = null;
+	public static  String queryBotPath = "/Users/Miso/QueryBot.xmi";
 	private static XatkitBot queryBot = null;
 
 	/**
@@ -78,11 +78,7 @@ public class XatkitBotImpl extends MinimalEObjectImpl.Container implements Xatki
 	 */
 	protected EList<DefaultEntity> defaultEntities;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+
 	
 
 	public static XatkitBot getQueryBotInstance() {
@@ -95,6 +91,11 @@ public class XatkitBotImpl extends MinimalEObjectImpl.Container implements Xatki
 		XatkitBot queryBotCopy = (XatkitBot) copier.copy(queryBot);
 		return queryBotCopy;
 	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	protected XatkitBotImpl() {
 		super();
 	}

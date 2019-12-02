@@ -3,9 +3,6 @@
 package Xatkit.impl;
 
 import Xatkit.*;
-
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -64,10 +61,10 @@ public class XatkitFactoryImpl extends EFactoryImpl implements XatkitFactory {
 			case XatkitPackage.COMPOSITE: return createComposite();
 			case XatkitPackage.ENTRY: return createEntry();
 			case XatkitPackage.COMPLEX_ENTRY: return createComplexEntry();
+			case XatkitPackage.ENTITY_TOKEN: return createEntityToken();
+			case XatkitPackage.LITERAL_TOKEN: return createLiteralToken();
 			case XatkitPackage.DEFAULT_ENTITY: return createDefaultEntity();
 			case XatkitPackage.INPUT: return createInput();
-			case XatkitPackage.INT_TO_ENTITY: return (EObject)createIntToEntity();
-			case XatkitPackage.INT_TO_STRING: return (EObject)createIntToString();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -145,6 +142,28 @@ public class XatkitFactoryImpl extends EFactoryImpl implements XatkitFactory {
 	 * @generated
 	 */
 	@Override
+	public EntityToken createEntityToken() {
+		EntityTokenImpl entityToken = new EntityTokenImpl();
+		return entityToken;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LiteralToken createLiteralToken() {
+		LiteralTokenImpl literalToken = new LiteralTokenImpl();
+		return literalToken;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public DefaultEntity createDefaultEntity() {
 		DefaultEntityImpl defaultEntity = new DefaultEntityImpl();
 		return defaultEntity;
@@ -159,26 +178,6 @@ public class XatkitFactoryImpl extends EFactoryImpl implements XatkitFactory {
 	public Input createInput() {
 		InputImpl input = new InputImpl();
 		return input;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map.Entry<Integer, Entity> createIntToEntity() {
-		IntToEntityImpl intToEntity = new IntToEntityImpl();
-		return intToEntity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map.Entry<Integer, String> createIntToString() {
-		IntToStringImpl intToString = new IntToStringImpl();
-		return intToString;
 	}
 
 	/**

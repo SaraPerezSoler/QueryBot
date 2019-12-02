@@ -48,68 +48,48 @@
       xsi:type="Xatkit:Composite"
       name="Attribute">
     <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.1"/>
+      <tokens
+          xsi:type="Xatkit:EntityToken"
+          entity="//@entities.1"/>
     </complexEntries>
     <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.2"/>
+      <tokens
+          xsi:type="Xatkit:EntityToken"
+          entity="//@entities.2"/>
     </complexEntries>
     <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.3"/>
+      <tokens
+          xsi:type="Xatkit:EntityToken"
+          entity="//@entities.3"/>
     </complexEntries>
     <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.4"/>
+      <tokens
+          xsi:type="Xatkit:EntityToken"
+          entity="//@entities.4"/>
     </complexEntries>
   </entities>
   <entities
       xsi:type="Xatkit:Composite"
       name="Reference">
     <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.5"/>
+      <tokens
+          xsi:type="Xatkit:EntityToken"
+          entity="//@entities.5"/>
     </complexEntries>
     <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.6"/>
+      <tokens
+          xsi:type="Xatkit:EntityToken"
+          entity="//@entities.6"/>
     </complexEntries>
     <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.7"/>
+      <tokens
+          xsi:type="Xatkit:EntityToken"
+          entity="//@entities.7"/>
     </complexEntries>
     <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.8"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.9"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.10"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.11"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.12"/>
+      <tokens
+          xsi:type="Xatkit:EntityToken"
+          entity="//@entities.8"/>
     </complexEntries>
   </entities>
   <entities
@@ -229,125 +209,17 @@
       xsi:type="Xatkit:Composite"
       name="Condition">
     <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.13"/>
-      <entities
-          xsi:type="Xatkit:IntToString"
-          key="1"
-          value="is "/>
-      <entities
-          key="2"
-          value="//@entities.20"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.14"/>
-      <entities
-          xsi:type="Xatkit:IntToString"
-          key="1"
-          value="is "/>
-      <entities
-          key="2"
-          value="//@entities.20"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.1"/>
-      <entities
-          key="1"
-          value="//@entities.15"/>
-      <entities
-          key="2"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.2"/>
-      <entities
-          key="1"
-          value="//@entities.16"/>
-      <entities
-          key="2"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.19"/>
-      <entities
-          key="1"
-          value="//@entities.3"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.4"/>
-      <entities
-          key="1"
-          value="//@entities.17"/>
-      <entities
-          key="2"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.5"/>
-      <entities
-          key="1"
-          value="//@entities.15"/>
-      <entities
-          key="2"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.6"/>
-      <entities
-          key="1"
-          value="//@entities.16"/>
-      <entities
-          key="2"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.8"/>
-      <entities
-          key="1"
-          value="//@entities.17"/>
-      <entities
-          key="2"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.19"/>
-      <entities
-          key="1"
-          value="//@entities.7"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.9"/>
-      <entities
-          key="1"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.10"/>
-      <entities
-          key="1"/>
-    </complexEntries>
-    <complexEntries>
-      <entities
-          key="0"
-          value="//@entities.12"/>
-      <entities
-          key="1"/>
+      <tokens
+          xsi:type="Xatkit:EntityToken"
+          entity="//@entities.13"/>
+      <tokens
+          xsi:type="Xatkit:LiteralToken"
+          pos="1"
+          literal="is"/>
+      <tokens
+          xsi:type="Xatkit:EntityToken"
+          pos="2"
+          entity="//@entities.20"/>
     </complexEntries>
   </entities>
   <defaultEntities

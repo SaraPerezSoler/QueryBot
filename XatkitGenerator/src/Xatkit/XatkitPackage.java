@@ -334,22 +334,13 @@ public interface XatkitPackage extends EPackage {
 	int COMPLEX_ENTRY = 6;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' map.
+	 * The feature id for the '<em><b>Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_ENTRY__ENTITIES = 0;
-
-	/**
-	 * The feature id for the '<em><b>Literals</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLEX_ENTRY__LITERALS = 1;
+	int COMPLEX_ENTRY__TOKENS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Complex Entry</em>' class.
@@ -358,7 +349,7 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_ENTRY_FEATURE_COUNT = 2;
+	int COMPLEX_ENTRY_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Complex Entry</em>' class.
@@ -370,6 +361,135 @@ public interface XatkitPackage extends EPackage {
 	int COMPLEX_ENTRY_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link Xatkit.impl.ComplexEntryTokenImpl <em>Complex Entry Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.ComplexEntryTokenImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getComplexEntryToken()
+	 * @generated
+	 */
+	int COMPLEX_ENTRY_TOKEN = 7;
+
+	/**
+	 * The feature id for the '<em><b>Pos</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_ENTRY_TOKEN__POS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Complex Entry Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_ENTRY_TOKEN_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Complex Entry Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_ENTRY_TOKEN_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.EntityTokenImpl <em>Entity Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.EntityTokenImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getEntityToken()
+	 * @generated
+	 */
+	int ENTITY_TOKEN = 8;
+
+	/**
+	 * The feature id for the '<em><b>Pos</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_TOKEN__POS = COMPLEX_ENTRY_TOKEN__POS;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_TOKEN__ENTITY = COMPLEX_ENTRY_TOKEN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Entity Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_TOKEN_FEATURE_COUNT = COMPLEX_ENTRY_TOKEN_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Entity Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_TOKEN_OPERATION_COUNT = COMPLEX_ENTRY_TOKEN_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.LiteralTokenImpl <em>Literal Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.LiteralTokenImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getLiteralToken()
+	 * @generated
+	 */
+	int LITERAL_TOKEN = 9;
+
+	/**
+	 * The feature id for the '<em><b>Pos</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_TOKEN__POS = COMPLEX_ENTRY_TOKEN__POS;
+
+	/**
+	 * The feature id for the '<em><b>Literal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_TOKEN__LITERAL = COMPLEX_ENTRY_TOKEN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Literal Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_TOKEN_FEATURE_COUNT = COMPLEX_ENTRY_TOKEN_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Literal Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_TOKEN_OPERATION_COUNT = COMPLEX_ENTRY_TOKEN_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link Xatkit.impl.DefaultEntityImpl <em>Default Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -377,7 +497,7 @@ public interface XatkitPackage extends EPackage {
 	 * @see Xatkit.impl.XatkitPackageImpl#getDefaultEntity()
 	 * @generated
 	 */
-	int DEFAULT_ENTITY = 7;
+	int DEFAULT_ENTITY = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -414,7 +534,7 @@ public interface XatkitPackage extends EPackage {
 	 * @see Xatkit.impl.XatkitPackageImpl#getInput()
 	 * @generated
 	 */
-	int INPUT = 8;
+	int INPUT = 11;
 
 	/**
 	 * The number of structural features of the '<em>Input</em>' class.
@@ -433,99 +553,6 @@ public interface XatkitPackage extends EPackage {
 	 * @ordered
 	 */
 	int INPUT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link Xatkit.impl.IntToEntityImpl <em>Int To Entity</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Xatkit.impl.IntToEntityImpl
-	 * @see Xatkit.impl.XatkitPackageImpl#getIntToEntity()
-	 * @generated
-	 */
-	int INT_TO_ENTITY = 9;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_TO_ENTITY__KEY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_TO_ENTITY__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Int To Entity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_TO_ENTITY_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Int To Entity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_TO_ENTITY_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link Xatkit.impl.IntToStringImpl <em>Int To String</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Xatkit.impl.IntToStringImpl
-	 * @see Xatkit.impl.XatkitPackageImpl#getIntToString()
-	 * @generated
-	 */
-	int INT_TO_STRING = 10;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_TO_STRING__KEY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_TO_STRING__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Int To String</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_TO_STRING_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Int To String</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_TO_STRING_OPERATION_COUNT = 0;
-
 
 	/**
 	 * Returns the meta object for class '{@link Xatkit.XatkitBot <em>Bot</em>}'.
@@ -697,26 +724,78 @@ public interface XatkitPackage extends EPackage {
 	EClass getComplexEntry();
 
 	/**
-	 * Returns the meta object for the map '{@link Xatkit.ComplexEntry#getEntities <em>Entities</em>}'.
+	 * Returns the meta object for the containment reference list '{@link Xatkit.ComplexEntry#getTokens <em>Tokens</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the map '<em>Entities</em>'.
-	 * @see Xatkit.ComplexEntry#getEntities()
+	 * @return the meta object for the containment reference list '<em>Tokens</em>'.
+	 * @see Xatkit.ComplexEntry#getTokens()
 	 * @see #getComplexEntry()
 	 * @generated
 	 */
-	EReference getComplexEntry_Entities();
+	EReference getComplexEntry_Tokens();
 
 	/**
-	 * Returns the meta object for the map '{@link Xatkit.ComplexEntry#getLiterals <em>Literals</em>}'.
+	 * Returns the meta object for class '{@link Xatkit.ComplexEntryToken <em>Complex Entry Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the map '<em>Literals</em>'.
-	 * @see Xatkit.ComplexEntry#getLiterals()
-	 * @see #getComplexEntry()
+	 * @return the meta object for class '<em>Complex Entry Token</em>'.
+	 * @see Xatkit.ComplexEntryToken
 	 * @generated
 	 */
-	EReference getComplexEntry_Literals();
+	EClass getComplexEntryToken();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Xatkit.ComplexEntryToken#getPos <em>Pos</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pos</em>'.
+	 * @see Xatkit.ComplexEntryToken#getPos()
+	 * @see #getComplexEntryToken()
+	 * @generated
+	 */
+	EAttribute getComplexEntryToken_Pos();
+
+	/**
+	 * Returns the meta object for class '{@link Xatkit.EntityToken <em>Entity Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Entity Token</em>'.
+	 * @see Xatkit.EntityToken
+	 * @generated
+	 */
+	EClass getEntityToken();
+
+	/**
+	 * Returns the meta object for the reference '{@link Xatkit.EntityToken#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity</em>'.
+	 * @see Xatkit.EntityToken#getEntity()
+	 * @see #getEntityToken()
+	 * @generated
+	 */
+	EReference getEntityToken_Entity();
+
+	/**
+	 * Returns the meta object for class '{@link Xatkit.LiteralToken <em>Literal Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Literal Token</em>'.
+	 * @see Xatkit.LiteralToken
+	 * @generated
+	 */
+	EClass getLiteralToken();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Xatkit.LiteralToken#getLiteral <em>Literal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Literal</em>'.
+	 * @see Xatkit.LiteralToken#getLiteral()
+	 * @see #getLiteralToken()
+	 * @generated
+	 */
+	EAttribute getLiteralToken_Literal();
 
 	/**
 	 * Returns the meta object for class '{@link Xatkit.DefaultEntity <em>Default Entity</em>}'.
@@ -737,75 +816,6 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getInput();
-
-	/**
-	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Int To Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Int To Entity</em>'.
-	 * @see java.util.Map.Entry
-	 * @model keyDataType="org.eclipse.emf.ecore.EIntegerObject" keyRequired="true"
-	 *        valueType="Xatkit.Entity" valueRequired="true"
-	 * @generated
-	 */
-	EClass getIntToEntity();
-
-	/**
-	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getIntToEntity()
-	 * @generated
-	 */
-	EAttribute getIntToEntity_Key();
-
-	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getIntToEntity()
-	 * @generated
-	 */
-	EReference getIntToEntity_Value();
-
-	/**
-	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Int To String</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Int To String</em>'.
-	 * @see java.util.Map.Entry
-	 * @model keyDataType="org.eclipse.emf.ecore.EIntegerObject" keyRequired="true"
-	 *        keyAnnotation="@CointainerVARInttostring"
-	 *        valueDataType="org.eclipse.emf.ecore.EString" valueRequired="true"
-	 * @generated
-	 */
-	EClass getIntToString();
-
-	/**
-	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getIntToString()
-	 * @generated
-	 */
-	EAttribute getIntToString_Key();
-
-	/**
-	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getIntToString()
-	 * @generated
-	 */
-	EAttribute getIntToString_Value();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -973,20 +983,66 @@ public interface XatkitPackage extends EPackage {
 		EClass COMPLEX_ENTRY = eINSTANCE.getComplexEntry();
 
 		/**
-		 * The meta object literal for the '<em><b>Entities</b></em>' map feature.
+		 * The meta object literal for the '<em><b>Tokens</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPLEX_ENTRY__ENTITIES = eINSTANCE.getComplexEntry_Entities();
+		EReference COMPLEX_ENTRY__TOKENS = eINSTANCE.getComplexEntry_Tokens();
 
 		/**
-		 * The meta object literal for the '<em><b>Literals</b></em>' map feature.
+		 * The meta object literal for the '{@link Xatkit.impl.ComplexEntryTokenImpl <em>Complex Entry Token</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.ComplexEntryTokenImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getComplexEntryToken()
+		 * @generated
+		 */
+		EClass COMPLEX_ENTRY_TOKEN = eINSTANCE.getComplexEntryToken();
+
+		/**
+		 * The meta object literal for the '<em><b>Pos</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPLEX_ENTRY__LITERALS = eINSTANCE.getComplexEntry_Literals();
+		EAttribute COMPLEX_ENTRY_TOKEN__POS = eINSTANCE.getComplexEntryToken_Pos();
+
+		/**
+		 * The meta object literal for the '{@link Xatkit.impl.EntityTokenImpl <em>Entity Token</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.EntityTokenImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getEntityToken()
+		 * @generated
+		 */
+		EClass ENTITY_TOKEN = eINSTANCE.getEntityToken();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_TOKEN__ENTITY = eINSTANCE.getEntityToken_Entity();
+
+		/**
+		 * The meta object literal for the '{@link Xatkit.impl.LiteralTokenImpl <em>Literal Token</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.LiteralTokenImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getLiteralToken()
+		 * @generated
+		 */
+		EClass LITERAL_TOKEN = eINSTANCE.getLiteralToken();
+
+		/**
+		 * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LITERAL_TOKEN__LITERAL = eINSTANCE.getLiteralToken_Literal();
 
 		/**
 		 * The meta object literal for the '{@link Xatkit.impl.DefaultEntityImpl <em>Default Entity</em>}' class.
@@ -1007,58 +1063,6 @@ public interface XatkitPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INPUT = eINSTANCE.getInput();
-
-		/**
-		 * The meta object literal for the '{@link Xatkit.impl.IntToEntityImpl <em>Int To Entity</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Xatkit.impl.IntToEntityImpl
-		 * @see Xatkit.impl.XatkitPackageImpl#getIntToEntity()
-		 * @generated
-		 */
-		EClass INT_TO_ENTITY = eINSTANCE.getIntToEntity();
-
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INT_TO_ENTITY__KEY = eINSTANCE.getIntToEntity_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INT_TO_ENTITY__VALUE = eINSTANCE.getIntToEntity_Value();
-
-		/**
-		 * The meta object literal for the '{@link Xatkit.impl.IntToStringImpl <em>Int To String</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Xatkit.impl.IntToStringImpl
-		 * @see Xatkit.impl.XatkitPackageImpl#getIntToString()
-		 * @generated
-		 */
-		EClass INT_TO_STRING = eINSTANCE.getIntToString();
-
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INT_TO_STRING__KEY = eINSTANCE.getIntToString_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INT_TO_STRING__VALUE = eINSTANCE.getIntToString_Value();
 
 	}
 

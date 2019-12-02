@@ -58,4 +58,6 @@ public interface Entry extends EObject {
 	 */
 	EList<String> getSynonyms();
 
+	String getEntryString();
+
 } // Entry

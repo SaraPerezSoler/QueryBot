@@ -3,19 +3,19 @@
 package Xatkit.impl;
 
 import Xatkit.ComplexEntry;
+import Xatkit.ComplexEntryToken;
 import Xatkit.Composite;
 import Xatkit.DefaultEntity;
 import Xatkit.Entity;
+import Xatkit.EntityToken;
 import Xatkit.Entry;
 import Xatkit.Input;
 import Xatkit.Intent;
+import Xatkit.LiteralToken;
 import Xatkit.Mapping;
 import Xatkit.XatkitBot;
 import Xatkit.XatkitFactory;
 import Xatkit.XatkitPackage;
-
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -84,6 +84,27 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass complexEntryTokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityTokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass literalTokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass defaultEntityEClass = null;
 
 	/**
@@ -92,20 +113,6 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * @generated
 	 */
 	private EClass inputEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass intToEntityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass intToStringEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -334,7 +341,7 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComplexEntry_Entities() {
+	public EReference getComplexEntry_Tokens() {
 		return (EReference)complexEntryEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -344,8 +351,58 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComplexEntry_Literals() {
-		return (EReference)complexEntryEClass.getEStructuralFeatures().get(1);
+	public EClass getComplexEntryToken() {
+		return complexEntryTokenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComplexEntryToken_Pos() {
+		return (EAttribute)complexEntryTokenEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEntityToken() {
+		return entityTokenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEntityToken_Entity() {
+		return (EReference)entityTokenEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getLiteralToken() {
+		return literalTokenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLiteralToken_Literal() {
+		return (EAttribute)literalTokenEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -366,66 +423,6 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	@Override
 	public EClass getInput() {
 		return inputEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getIntToEntity() {
-		return intToEntityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getIntToEntity_Key() {
-		return (EAttribute)intToEntityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getIntToEntity_Value() {
-		return (EReference)intToEntityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getIntToString() {
-		return intToStringEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getIntToString_Key() {
-		return (EAttribute)intToStringEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getIntToString_Value() {
-		return (EAttribute)intToStringEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -479,20 +476,20 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 		createEAttribute(entryEClass, ENTRY__SYNONYMS);
 
 		complexEntryEClass = createEClass(COMPLEX_ENTRY);
-		createEReference(complexEntryEClass, COMPLEX_ENTRY__ENTITIES);
-		createEReference(complexEntryEClass, COMPLEX_ENTRY__LITERALS);
+		createEReference(complexEntryEClass, COMPLEX_ENTRY__TOKENS);
+
+		complexEntryTokenEClass = createEClass(COMPLEX_ENTRY_TOKEN);
+		createEAttribute(complexEntryTokenEClass, COMPLEX_ENTRY_TOKEN__POS);
+
+		entityTokenEClass = createEClass(ENTITY_TOKEN);
+		createEReference(entityTokenEClass, ENTITY_TOKEN__ENTITY);
+
+		literalTokenEClass = createEClass(LITERAL_TOKEN);
+		createEAttribute(literalTokenEClass, LITERAL_TOKEN__LITERAL);
 
 		defaultEntityEClass = createEClass(DEFAULT_ENTITY);
 
 		inputEClass = createEClass(INPUT);
-
-		intToEntityEClass = createEClass(INT_TO_ENTITY);
-		createEAttribute(intToEntityEClass, INT_TO_ENTITY__KEY);
-		createEReference(intToEntityEClass, INT_TO_ENTITY__VALUE);
-
-		intToStringEClass = createEClass(INT_TO_STRING);
-		createEAttribute(intToStringEClass, INT_TO_STRING__KEY);
-		createEAttribute(intToStringEClass, INT_TO_STRING__VALUE);
 	}
 
 	/**
@@ -525,6 +522,8 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 		// Add supertypes to classes
 		mappingEClass.getESuperTypes().add(this.getEntity());
 		compositeEClass.getESuperTypes().add(this.getEntity());
+		entityTokenEClass.getESuperTypes().add(this.getComplexEntryToken());
+		literalTokenEClass.getESuperTypes().add(this.getComplexEntryToken());
 		defaultEntityEClass.getESuperTypes().add(this.getEntity());
 
 		// Initialize classes, features, and operations; add parameters
@@ -550,20 +549,20 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 		initEAttribute(getEntry_Synonyms(), ecorePackage.getEString(), "synonyms", null, 0, -1, Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(complexEntryEClass, ComplexEntry.class, "ComplexEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComplexEntry_Entities(), this.getIntToEntity(), null, "entities", null, 0, -1, ComplexEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComplexEntry_Literals(), this.getIntToString(), null, "literals", null, 0, -1, ComplexEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComplexEntry_Tokens(), this.getComplexEntryToken(), null, "tokens", null, 1, -1, ComplexEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(complexEntryTokenEClass, ComplexEntryToken.class, "ComplexEntryToken", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComplexEntryToken_Pos(), ecorePackage.getEInt(), "pos", null, 1, 1, ComplexEntryToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entityTokenEClass, EntityToken.class, "EntityToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityToken_Entity(), this.getEntity(), null, "entity", null, 1, 1, EntityToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(literalTokenEClass, LiteralToken.class, "LiteralToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLiteralToken_Literal(), ecorePackage.getEString(), "literal", null, 1, 1, LiteralToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(defaultEntityEClass, DefaultEntity.class, "DefaultEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(intToEntityEClass, Map.Entry.class, "IntToEntity", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntToEntity_Key(), ecorePackage.getEIntegerObject(), "key", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIntToEntity_Value(), this.getEntity(), null, "value", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(intToStringEClass, Map.Entry.class, "IntToString", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntToString_Key(), ecorePackage.getEIntegerObject(), "key", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIntToString_Value(), ecorePackage.getEString(), "value", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -571,8 +570,6 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 		// Create annotations
 		// @CointainerVAREntry
 		create_CointainerVAREntryAnnotations();
-		// @CointainerVARInttostring
-		create_CointainerVARInttostringAnnotations();
 	}
 
 	/**
@@ -585,21 +582,6 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 		String source = "@CointainerVAREntry";
 		addAnnotation
 		  (getEntry_Synonyms(),
-		   source,
-		   new String[] {
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>@CointainerVARInttostring</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void create_CointainerVARInttostringAnnotations() {
-		String source = "@CointainerVARInttostring";
-		addAnnotation
-		  (getIntToString_Key(),
 		   source,
 		   new String[] {
 		   });

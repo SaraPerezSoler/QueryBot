@@ -1,6 +1,7 @@
 package xatkitgen;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import Utils.Utils;
@@ -11,6 +12,7 @@ import Xatkit.XatkitBot;
 import Xatkit.XatkitFactory;
 import Xatkit.impl.XatkitBotImpl;
 import modelInfo.NLAttribute;
+import modelInfo.impl.NLAttributeImpl;
 import modelInfo.NLClass;
 import modelInfo.NLElement;
 import modelInfo.NLFeature;
@@ -84,7 +86,7 @@ public class ModelInfoToXatkit {
 		if (mapping != null) {
 			//Generate a noun mapping entry and save it if the mapping doesn´t contain it
 			Entry entry = nlElementToEntry(nlReference);
-			if (!mapping.getEntries().contains(entry)) {
+			if (!contains(mapping.getEntries(), entry)) {
 				mapping.getEntries().add(entry);
 			}
 		}
@@ -94,7 +96,7 @@ public class ModelInfoToXatkit {
 				Entry entry = XatkitFactory.eINSTANCE.createEntry();
 				entry.setValue(nlReference.getName());
 				entry.getSynonyms().addAll(nlReference.getVerb());
-				if (!mappingV.getEntries().contains(entry)) {
+				if (!contains(mappingV.getEntries(), entry)) {
 					mappingV.getEntries().add(entry);
 				}
 			}
@@ -117,11 +119,20 @@ public class ModelInfoToXatkit {
 		if (mapping != null) {
 			//Generate a attribute mapping entry and save it if the mapping doesn´t contain it
 			Entry entry = nlElementToEntry(nlAttribute);
-			if (!mapping.getEntries().contains(entry)) {
+			if (!contains(mapping.getEntries(), entry)) {
 				mapping.getEntries().add(entry);
 			}
 		}
 		
+	}
+	
+	private boolean contains (List<Entry> entries, Entry entry) {
+		for (Entry e: entries) {
+			if (e.equals(entry)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	

@@ -76,6 +76,24 @@ public interface XatkitFactory extends EFactory {
 	ComplexEntry createComplexEntry();
 
 	/**
+	 * Returns a new object of class '<em>Entity Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entity Token</em>'.
+	 * @generated
+	 */
+	EntityToken createEntityToken();
+
+	/**
+	 * Returns a new object of class '<em>Literal Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Literal Token</em>'.
+	 * @generated
+	 */
+	LiteralToken createLiteralToken();
+
+	/**
 	 * Returns a new object of class '<em>Default Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -3,9 +3,6 @@
 package Xatkit.util;
 
 import Xatkit.*;
-
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -112,6 +109,26 @@ public class XatkitSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case XatkitPackage.COMPLEX_ENTRY_TOKEN: {
+				ComplexEntryToken complexEntryToken = (ComplexEntryToken)theEObject;
+				T result = caseComplexEntryToken(complexEntryToken);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XatkitPackage.ENTITY_TOKEN: {
+				EntityToken entityToken = (EntityToken)theEObject;
+				T result = caseEntityToken(entityToken);
+				if (result == null) result = caseComplexEntryToken(entityToken);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XatkitPackage.LITERAL_TOKEN: {
+				LiteralToken literalToken = (LiteralToken)theEObject;
+				T result = caseLiteralToken(literalToken);
+				if (result == null) result = caseComplexEntryToken(literalToken);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case XatkitPackage.DEFAULT_ENTITY: {
 				DefaultEntity defaultEntity = (DefaultEntity)theEObject;
 				T result = caseDefaultEntity(defaultEntity);
@@ -122,18 +139,6 @@ public class XatkitSwitch<T> extends Switch<T> {
 			case XatkitPackage.INPUT: {
 				Input input = (Input)theEObject;
 				T result = caseInput(input);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case XatkitPackage.INT_TO_ENTITY: {
-				@SuppressWarnings("unchecked") Map.Entry<Integer, Entity> intToEntity = (Map.Entry<Integer, Entity>)theEObject;
-				T result = caseIntToEntity(intToEntity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case XatkitPackage.INT_TO_STRING: {
-				@SuppressWarnings("unchecked") Map.Entry<Integer, String> intToString = (Map.Entry<Integer, String>)theEObject;
-				T result = caseIntToString(intToString);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -247,6 +252,51 @@ public class XatkitSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Complex Entry Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Complex Entry Token</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComplexEntryToken(ComplexEntryToken object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Token</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityToken(EntityToken object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Literal Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Literal Token</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLiteralToken(LiteralToken object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Default Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -273,36 +323,6 @@ public class XatkitSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInput(Input object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Int To Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Int To Entity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIntToEntity(Map.Entry<Integer, Entity> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Int To String</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Int To String</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIntToString(Map.Entry<Integer, String> object) {
 		return null;
 	}
 

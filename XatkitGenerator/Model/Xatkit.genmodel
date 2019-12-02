@@ -28,18 +28,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//Entry/synonyms"/>
     </genClasses>
     <genClasses ecoreClass="Xatkit.ecore#//ComplexEntry">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//ComplexEntry/entities"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//ComplexEntry/literals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//ComplexEntry/tokens"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Xatkit.ecore#//ComplexEntryToken">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//ComplexEntryToken/pos"/>
+    </genClasses>
+    <genClasses ecoreClass="Xatkit.ecore#//EntityToken">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Xatkit.ecore#//EntityToken/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="Xatkit.ecore#//LiteralToken">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//LiteralToken/literal"/>
     </genClasses>
     <genClasses ecoreClass="Xatkit.ecore#//DefaultEntity"/>
     <genClasses ecoreClass="Xatkit.ecore#//Input"/>
-    <genClasses ecoreClass="Xatkit.ecore#//IntToEntity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//IntToEntity/key"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Xatkit.ecore#//IntToEntity/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Xatkit.ecore#//IntToString">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//IntToString/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//IntToString/value"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -3,9 +3,6 @@
 package Xatkit.util;
 
 import Xatkit.*;
-
-import java.util.Map;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -98,20 +95,24 @@ public class XatkitAdapterFactory extends AdapterFactoryImpl {
 				return createComplexEntryAdapter();
 			}
 			@Override
+			public Adapter caseComplexEntryToken(ComplexEntryToken object) {
+				return createComplexEntryTokenAdapter();
+			}
+			@Override
+			public Adapter caseEntityToken(EntityToken object) {
+				return createEntityTokenAdapter();
+			}
+			@Override
+			public Adapter caseLiteralToken(LiteralToken object) {
+				return createLiteralTokenAdapter();
+			}
+			@Override
 			public Adapter caseDefaultEntity(DefaultEntity object) {
 				return createDefaultEntityAdapter();
 			}
 			@Override
 			public Adapter caseInput(Input object) {
 				return createInputAdapter();
-			}
-			@Override
-			public Adapter caseIntToEntity(Map.Entry<Integer, Entity> object) {
-				return createIntToEntityAdapter();
-			}
-			@Override
-			public Adapter caseIntToString(Map.Entry<Integer, String> object) {
-				return createIntToStringAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -232,6 +233,48 @@ public class XatkitAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.ComplexEntryToken <em>Complex Entry Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.ComplexEntryToken
+	 * @generated
+	 */
+	public Adapter createComplexEntryTokenAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.EntityToken <em>Entity Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.EntityToken
+	 * @generated
+	 */
+	public Adapter createEntityTokenAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.LiteralToken <em>Literal Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.LiteralToken
+	 * @generated
+	 */
+	public Adapter createLiteralTokenAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link Xatkit.DefaultEntity <em>Default Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -256,34 +299,6 @@ public class XatkitAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInputAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Int To Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.Map.Entry
-	 * @generated
-	 */
-	public Adapter createIntToEntityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Int To String</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.Map.Entry
-	 * @generated
-	 */
-	public Adapter createIntToStringAdapter() {
 		return null;
 	}
 

@@ -231,4 +231,16 @@ public class EntryImpl extends MinimalEObjectImpl.Container implements Entry {
 		return true;
 	}
 
+	@Override
+	public String getEntryString() {
+		String ret = "value \""+getValue()+"\" ";
+		if (!getSynonyms().isEmpty()) {
+			ret += "synonyms: ";
+			for (String syn: getSynonyms()) {
+				ret += "\""+syn+"\" ";
+			}
+		}
+		return ret+"\n";
+	}
+
 } //EntryImpl

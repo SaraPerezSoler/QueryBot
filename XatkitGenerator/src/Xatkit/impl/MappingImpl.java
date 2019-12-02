@@ -148,4 +148,14 @@ public class MappingImpl extends EntityImpl implements Mapping {
 		return super.eIsSet(featureID);
 	}
 
+	@Override
+	public String generateEntityString() {
+		String ret = "mapping "+getName()+"{\n";
+		for (Entry entry: getEntries()) {
+			ret +="\t"+ entry.getEntryString();
+		}
+		ret += "}\n";
+		return ret;
+	}
+
 } //MappingImpl

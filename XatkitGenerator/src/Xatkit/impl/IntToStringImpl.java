@@ -109,6 +109,10 @@ public class IntToStringImpl extends MinimalEObjectImpl.Container implements Bas
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, XatkitPackage.INT_TO_STRING__KEY, oldKey, key));
 	}
+	
+	public void setTypedKey(int newKey) {
+		setTypedKey((Integer)newKey);
+	}
 
 	/**
 	 * <!-- begin-user-doc -->

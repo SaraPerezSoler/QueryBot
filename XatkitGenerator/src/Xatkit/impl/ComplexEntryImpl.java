@@ -3,20 +3,20 @@
 package Xatkit.impl;
 
 import Xatkit.ComplexEntry;
+import Xatkit.ComplexEntryToken;
 import Xatkit.Entity;
 import Xatkit.XatkitPackage;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
-import org.eclipse.emf.common.util.EMap;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EcoreEMap;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -27,32 +27,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Xatkit.impl.ComplexEntryImpl#getEntities <em>Entities</em>}</li>
- *   <li>{@link Xatkit.impl.ComplexEntryImpl#getLiterals <em>Literals</em>}</li>
+ *   <li>{@link Xatkit.impl.ComplexEntryImpl#getTokens <em>Tokens</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ComplexEntryImpl extends MinimalEObjectImpl.Container implements ComplexEntry {
 	/**
-	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' map.
+	 * The cached value of the '{@link #getTokens() <em>Tokens</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntities()
+	 * @see #getTokens()
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Integer, Entity> entities;
-
-	/**
-	 * The cached value of the '{@link #getLiterals() <em>Literals</em>}' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLiterals()
-	 * @generated
-	 * @ordered
-	 */
-	protected EMap<Integer, String> literals;
+	protected EList<ComplexEntryToken> tokens;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,24 +68,11 @@ public class ComplexEntryImpl extends MinimalEObjectImpl.Container implements Co
 	 * @generated
 	 */
 	@Override
-	public EMap<Integer, Entity> getEntities() {
-		if (entities == null) {
-			entities = new EcoreEMap<Integer,Entity>(XatkitPackage.Literals.INT_TO_ENTITY, IntToEntityImpl.class, this, XatkitPackage.COMPLEX_ENTRY__ENTITIES);
+	public EList<ComplexEntryToken> getTokens() {
+		if (tokens == null) {
+			tokens = new EObjectContainmentEList<ComplexEntryToken>(ComplexEntryToken.class, this, XatkitPackage.COMPLEX_ENTRY__TOKENS);
 		}
-		return entities;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EMap<Integer, String> getLiterals() {
-		if (literals == null) {
-			literals = new EcoreEMap<Integer,String>(XatkitPackage.Literals.INT_TO_STRING, IntToStringImpl.class, this, XatkitPackage.COMPLEX_ENTRY__LITERALS);
-		}
-		return literals;
+		return tokens;
 	}
 
 	/**
@@ -107,10 +83,8 @@ public class ComplexEntryImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case XatkitPackage.COMPLEX_ENTRY__ENTITIES:
-				return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
-			case XatkitPackage.COMPLEX_ENTRY__LITERALS:
-				return ((InternalEList<?>)getLiterals()).basicRemove(otherEnd, msgs);
+			case XatkitPackage.COMPLEX_ENTRY__TOKENS:
+				return ((InternalEList<?>)getTokens()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -123,12 +97,8 @@ public class ComplexEntryImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case XatkitPackage.COMPLEX_ENTRY__ENTITIES:
-				if (coreType) return getEntities();
-				else return getEntities().map();
-			case XatkitPackage.COMPLEX_ENTRY__LITERALS:
-				if (coreType) return getLiterals();
-				else return getLiterals().map();
+			case XatkitPackage.COMPLEX_ENTRY__TOKENS:
+				return getTokens();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,14 +108,13 @@ public class ComplexEntryImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case XatkitPackage.COMPLEX_ENTRY__ENTITIES:
-				((EStructuralFeature.Setting)getEntities()).set(newValue);
-				return;
-			case XatkitPackage.COMPLEX_ENTRY__LITERALS:
-				((EStructuralFeature.Setting)getLiterals()).set(newValue);
+			case XatkitPackage.COMPLEX_ENTRY__TOKENS:
+				getTokens().clear();
+				getTokens().addAll((Collection<? extends ComplexEntryToken>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -159,11 +128,8 @@ public class ComplexEntryImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case XatkitPackage.COMPLEX_ENTRY__ENTITIES:
-				getEntities().clear();
-				return;
-			case XatkitPackage.COMPLEX_ENTRY__LITERALS:
-				getLiterals().clear();
+			case XatkitPackage.COMPLEX_ENTRY__TOKENS:
+				getTokens().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -177,10 +143,8 @@ public class ComplexEntryImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case XatkitPackage.COMPLEX_ENTRY__ENTITIES:
-				return entities != null && !entities.isEmpty();
-			case XatkitPackage.COMPLEX_ENTRY__LITERALS:
-				return literals != null && !literals.isEmpty();
+			case XatkitPackage.COMPLEX_ENTRY__TOKENS:
+				return tokens != null && !tokens.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -192,13 +156,20 @@ public class ComplexEntryImpl extends MinimalEObjectImpl.Container implements Co
 
 	@Override
 	public String getEntryString() {
-		String ret = "";
+		String ret = "value ";
 		int size = getEntities().size()+getLiterals().size();
 		for (int i = 0; i<size; i++) {
-			Entity entity = getEntities().get(i);
-			
+			Entity entity = getEntities().get((Integer)i);
+			if (entity == null) {
+				String literal = getLiterals().get((Integer)i);
+				if(literal!= null) {
+					ret += " "+literal+" ";
+				}
+			}else {
+				ret += entity.getName();
+			}
 		}
-		return null;
+		return ret+"\n";
 	}
 
 } //ComplexEntryImpl

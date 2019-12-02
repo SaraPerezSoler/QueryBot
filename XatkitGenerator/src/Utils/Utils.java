@@ -71,8 +71,7 @@ public abstract class Utils {
 		public String getName() {
 			return name;
 		}
-
-
+		
 		public String getAttibuteMappingName() {
 			return attibuteType;
 		}
@@ -87,6 +86,14 @@ public abstract class Utils {
 			return refernceVType;
 		}
 		
+		public static Types valueOfType(String type) {
+			for (Types t: Types.values()) {
+				if(t.getName().equalsIgnoreCase(type)) {
+					return t;
+				}
+			}
+			return null;
+		}
 		
 	}
 }

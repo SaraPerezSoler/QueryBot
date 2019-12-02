@@ -37,6 +37,7 @@ import modelInfo.NLModel;
 import modelInfo.NLReference;
 import net.didion.jwnl.data.POS;
 import synonyms.WordNet;
+import xatkitgen.ModelInfoToXatkit;
 import xatkitgen.ModelInfoToXatkitCopy;
 
 /**
@@ -112,8 +113,8 @@ public class ProcesaFichero extends HttpServlet {
 		RequestDispatcher jsp;
         jsp = getServletContext().getRequestDispatcher("/Configurator.jsp");
         jsp.forward(request, response);*/
-		ModelInfoToXatkitCopy generator = new ModelInfoToXatkitCopy(model, OUT, MAPPING_FILE);
-		System.out.println(generator.genereteEntities());
+		ModelInfoToXatkit generator = new ModelInfoToXatkit(model);
+		System.out.println(generator.apply().generateIntentFile());
 	}
 
 	private String getFileName(Part part) {

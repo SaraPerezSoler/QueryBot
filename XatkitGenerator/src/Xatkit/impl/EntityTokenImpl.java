@@ -1,52 +1,48 @@
 /**
  */
-package modelInfo.impl;
+package Xatkit.impl;
 
-import modelInfo.ModelInfoPackage;
-import modelInfo.NLAttribute;
+import Xatkit.Entity;
+import Xatkit.EntityToken;
+import Xatkit.XatkitPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import Utils.Utils.Types;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>NL Attribute</b></em>'.
+ * An implementation of the model object '<em><b>Entity Token</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link modelInfo.impl.NLAttributeImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link Xatkit.impl.EntityTokenImpl#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
-	
-
+public class EntityTokenImpl extends ComplexEntryTokenImpl implements EntityToken {
 	/**
-	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
+	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttribute()
+	 * @see #getEntity()
 	 * @generated
 	 * @ordered
 	 */
-	protected EAttribute attribute;
+	protected Entity entity;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NLAttributeImpl() {
+	protected EntityTokenImpl() {
 		super();
 	}
 
@@ -57,7 +53,7 @@ public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ModelInfoPackage.Literals.NL_ATTRIBUTE;
+		return XatkitPackage.Literals.ENTITY_TOKEN;
 	}
 
 	/**
@@ -66,16 +62,16 @@ public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAttribute() {
-		if (attribute != null && attribute.eIsProxy()) {
-			InternalEObject oldAttribute = (InternalEObject)attribute;
-			attribute = (EAttribute)eResolveProxy(oldAttribute);
-			if (attribute != oldAttribute) {
+	public Entity getEntity() {
+		if (entity != null && entity.eIsProxy()) {
+			InternalEObject oldEntity = (InternalEObject)entity;
+			entity = (Entity)eResolveProxy(oldEntity);
+			if (entity != oldEntity) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelInfoPackage.NL_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XatkitPackage.ENTITY_TOKEN__ENTITY, oldEntity, entity));
 			}
 		}
-		return attribute;
+		return entity;
 	}
 
 	/**
@@ -83,8 +79,8 @@ public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute basicGetAttribute() {
-		return attribute;
+	public Entity basicGetEntity() {
+		return entity;
 	}
 
 	/**
@@ -93,11 +89,11 @@ public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
 	 * @generated
 	 */
 	@Override
-	public void setAttribute(EAttribute newAttribute) {
-		EAttribute oldAttribute = attribute;
-		attribute = newAttribute;
+	public void setEntity(Entity newEntity) {
+		Entity oldEntity = entity;
+		entity = newEntity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelInfoPackage.NL_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, XatkitPackage.ENTITY_TOKEN__ENTITY, oldEntity, entity));
 	}
 
 	/**
@@ -108,9 +104,9 @@ public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModelInfoPackage.NL_ATTRIBUTE__ATTRIBUTE:
-				if (resolve) return getAttribute();
-				return basicGetAttribute();
+			case XatkitPackage.ENTITY_TOKEN__ENTITY:
+				if (resolve) return getEntity();
+				return basicGetEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,8 +119,8 @@ public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModelInfoPackage.NL_ATTRIBUTE__ATTRIBUTE:
-				setAttribute((EAttribute)newValue);
+			case XatkitPackage.ENTITY_TOKEN__ENTITY:
+				setEntity((Entity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -138,8 +134,8 @@ public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModelInfoPackage.NL_ATTRIBUTE__ATTRIBUTE:
-				setAttribute((EAttribute)null);
+			case XatkitPackage.ENTITY_TOKEN__ENTITY:
+				setEntity((Entity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -153,18 +149,10 @@ public class NLAttributeImpl extends NLFeatureImpl implements NLAttribute {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModelInfoPackage.NL_ATTRIBUTE__ATTRIBUTE:
-				return attribute != null;
+			case XatkitPackage.ENTITY_TOKEN__ENTITY:
+				return entity != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-
-	@Override
-	public Types getType() {
-		return Types.valueOfType(this.attribute.getEType().getInstanceClassName());
-	}
-
-	
-
-} //NLAttributeImpl
+} //EntityTokenImpl
