@@ -112,14 +112,14 @@ public interface XatkitPackage extends EPackage {
 	int XATKIT_BOT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link Xatkit.impl.EntityImpl <em>Entity</em>}' class.
+	 * The meta object id for the '{@link Xatkit.impl.ElementImpl <em>Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Xatkit.impl.EntityImpl
-	 * @see Xatkit.impl.XatkitPackageImpl#getEntity()
+	 * @see Xatkit.impl.ElementImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getElement()
 	 * @generated
 	 */
-	int ENTITY = 1;
+	int ELEMENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -128,7 +128,44 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__NAME = 0;
+	int ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.EntityImpl <em>Entity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.EntityImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getEntity()
+	 * @generated
+	 */
+	int ENTITY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__NAME = ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -137,7 +174,7 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 1;
+	int ENTITY_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -146,7 +183,7 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OPERATION_COUNT = 0;
+	int ENTITY_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link Xatkit.impl.IntentImpl <em>Intent</em>}' class.
@@ -156,7 +193,16 @@ public interface XatkitPackage extends EPackage {
 	 * @see Xatkit.impl.XatkitPackageImpl#getIntent()
 	 * @generated
 	 */
-	int INTENT = 2;
+	int INTENT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTENT__NAME = ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
@@ -165,7 +211,25 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT__INPUTS = 0;
+	int INTENT__INPUTS = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTENT__CONTEXT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Requires</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTENT__REQUIRES = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Intent</em>' class.
@@ -174,7 +238,7 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT_FEATURE_COUNT = 1;
+	int INTENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Intent</em>' class.
@@ -183,7 +247,7 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENT_OPERATION_COUNT = 0;
+	int INTENT_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link Xatkit.impl.MappingImpl <em>Mapping</em>}' class.
@@ -193,7 +257,7 @@ public interface XatkitPackage extends EPackage {
 	 * @see Xatkit.impl.XatkitPackageImpl#getMapping()
 	 * @generated
 	 */
-	int MAPPING = 3;
+	int MAPPING = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -239,7 +303,7 @@ public interface XatkitPackage extends EPackage {
 	 * @see Xatkit.impl.XatkitPackageImpl#getComposite()
 	 * @generated
 	 */
-	int COMPOSITE = 4;
+	int COMPOSITE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -285,7 +349,7 @@ public interface XatkitPackage extends EPackage {
 	 * @see Xatkit.impl.XatkitPackageImpl#getEntry()
 	 * @generated
 	 */
-	int ENTRY = 5;
+	int ENTRY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -331,7 +395,7 @@ public interface XatkitPackage extends EPackage {
 	 * @see Xatkit.impl.XatkitPackageImpl#getComplexEntry()
 	 * @generated
 	 */
-	int COMPLEX_ENTRY = 6;
+	int COMPLEX_ENTRY = 7;
 
 	/**
 	 * The feature id for the '<em><b>Tokens</b></em>' containment reference list.
@@ -361,14 +425,14 @@ public interface XatkitPackage extends EPackage {
 	int COMPLEX_ENTRY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link Xatkit.impl.ComplexEntryTokenImpl <em>Complex Entry Token</em>}' class.
+	 * The meta object id for the '{@link Xatkit.impl.TokenImpl <em>Token</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Xatkit.impl.ComplexEntryTokenImpl
-	 * @see Xatkit.impl.XatkitPackageImpl#getComplexEntryToken()
+	 * @see Xatkit.impl.TokenImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getToken()
 	 * @generated
 	 */
-	int COMPLEX_ENTRY_TOKEN = 7;
+	int TOKEN = 8;
 
 	/**
 	 * The feature id for the '<em><b>Pos</b></em>' attribute.
@@ -377,25 +441,45 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_ENTRY_TOKEN__POS = 0;
+	int TOKEN__POS = 0;
 
 	/**
-	 * The number of structural features of the '<em>Complex Entry Token</em>' class.
+	 * The number of structural features of the '<em>Token</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_ENTRY_TOKEN_FEATURE_COUNT = 1;
+	int TOKEN_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Complex Entry Token</em>' class.
+	 * The number of operations of the '<em>Token</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_ENTRY_TOKEN_OPERATION_COUNT = 0;
+	int TOKEN_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.ComplexEntryTokenImpl <em>Complex Entry Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.ComplexEntryTokenImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getComplexEntryToken()
+	 * @generated
+	 */
+	int COMPLEX_ENTRY_TOKEN = 10;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.LiteralCETokenImpl <em>Literal CE Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.LiteralCETokenImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getLiteralCEToken()
+	 * @generated
+	 */
+	int LITERAL_CE_TOKEN = 11;
 
 	/**
 	 * The meta object id for the '{@link Xatkit.impl.EntityTokenImpl <em>Entity Token</em>}' class.
@@ -405,7 +489,107 @@ public interface XatkitPackage extends EPackage {
 	 * @see Xatkit.impl.XatkitPackageImpl#getEntityToken()
 	 * @generated
 	 */
-	int ENTITY_TOKEN = 8;
+	int ENTITY_TOKEN = 12;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.LiteralTokenImpl <em>Literal Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.LiteralTokenImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getLiteralToken()
+	 * @generated
+	 */
+	int LITERAL_TOKEN = 9;
+
+	/**
+	 * The feature id for the '<em><b>Literal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_TOKEN__LITERAL = 0;
+
+	/**
+	 * The number of structural features of the '<em>Literal Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_TOKEN_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Literal Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_TOKEN_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Pos</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_ENTRY_TOKEN__POS = TOKEN__POS;
+
+	/**
+	 * The number of structural features of the '<em>Complex Entry Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_ENTRY_TOKEN_FEATURE_COUNT = TOKEN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Complex Entry Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_ENTRY_TOKEN_OPERATION_COUNT = TOKEN_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Pos</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_CE_TOKEN__POS = COMPLEX_ENTRY_TOKEN__POS;
+
+	/**
+	 * The feature id for the '<em><b>Literal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_CE_TOKEN__LITERAL = COMPLEX_ENTRY_TOKEN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Literal CE Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_CE_TOKEN_FEATURE_COUNT = COMPLEX_ENTRY_TOKEN_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Literal CE Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_CE_TOKEN_OPERATION_COUNT = COMPLEX_ENTRY_TOKEN_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Pos</b></em>' attribute.
@@ -444,52 +628,6 @@ public interface XatkitPackage extends EPackage {
 	int ENTITY_TOKEN_OPERATION_COUNT = COMPLEX_ENTRY_TOKEN_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link Xatkit.impl.LiteralTokenImpl <em>Literal Token</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Xatkit.impl.LiteralTokenImpl
-	 * @see Xatkit.impl.XatkitPackageImpl#getLiteralToken()
-	 * @generated
-	 */
-	int LITERAL_TOKEN = 9;
-
-	/**
-	 * The feature id for the '<em><b>Pos</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_TOKEN__POS = COMPLEX_ENTRY_TOKEN__POS;
-
-	/**
-	 * The feature id for the '<em><b>Literal</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_TOKEN__LITERAL = COMPLEX_ENTRY_TOKEN_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Literal Token</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_TOKEN_FEATURE_COUNT = COMPLEX_ENTRY_TOKEN_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Literal Token</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_TOKEN_OPERATION_COUNT = COMPLEX_ENTRY_TOKEN_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link Xatkit.impl.DefaultEntityImpl <em>Default Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -497,7 +635,7 @@ public interface XatkitPackage extends EPackage {
 	 * @see Xatkit.impl.XatkitPackageImpl#getDefaultEntity()
 	 * @generated
 	 */
-	int DEFAULT_ENTITY = 10;
+	int DEFAULT_ENTITY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -534,7 +672,16 @@ public interface XatkitPackage extends EPackage {
 	 * @see Xatkit.impl.XatkitPackageImpl#getInput()
 	 * @generated
 	 */
-	int INPUT = 11;
+	int INPUT = 14;
+
+	/**
+	 * The feature id for the '<em><b>Tokens</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__TOKENS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Input</em>' class.
@@ -543,7 +690,7 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_FEATURE_COUNT = 0;
+	int INPUT_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Input</em>' class.
@@ -553,6 +700,282 @@ public interface XatkitPackage extends EPackage {
 	 * @ordered
 	 */
 	int INPUT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.InputTokenImpl <em>Input Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.InputTokenImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getInputToken()
+	 * @generated
+	 */
+	int INPUT_TOKEN = 15;
+
+	/**
+	 * The feature id for the '<em><b>Pos</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_TOKEN__POS = TOKEN__POS;
+
+	/**
+	 * The number of structural features of the '<em>Input Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_TOKEN_FEATURE_COUNT = TOKEN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Input Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_TOKEN_OPERATION_COUNT = TOKEN_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.LiteralInputTokenImpl <em>Literal Input Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.LiteralInputTokenImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getLiteralInputToken()
+	 * @generated
+	 */
+	int LITERAL_INPUT_TOKEN = 16;
+
+	/**
+	 * The feature id for the '<em><b>Literal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_INPUT_TOKEN__LITERAL = LITERAL_TOKEN__LITERAL;
+
+	/**
+	 * The feature id for the '<em><b>Pos</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_INPUT_TOKEN__POS = LITERAL_TOKEN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Literal Input Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_INPUT_TOKEN_FEATURE_COUNT = LITERAL_TOKEN_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Literal Input Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_INPUT_TOKEN_OPERATION_COUNT = LITERAL_TOKEN_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.ParameterTokenImpl <em>Parameter Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.ParameterTokenImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getParameterToken()
+	 * @generated
+	 */
+	int PARAMETER_TOKEN = 17;
+
+	/**
+	 * The feature id for the '<em><b>Pos</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_TOKEN__POS = INPUT_TOKEN__POS;
+
+	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_TOKEN__PARAMETER = INPUT_TOKEN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Parameter Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_TOKEN_FEATURE_COUNT = INPUT_TOKEN_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Parameter Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_TOKEN_OPERATION_COUNT = INPUT_TOKEN_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.ContextImpl <em>Context</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.ContextImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getContext()
+	 * @generated
+	 */
+	int CONTEXT = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__NAME = ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__PARAMETERS = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.ParameterImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getParameter()
+	 * @generated
+	 */
+	int PARAMETER = 19;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__NAME = ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__ENTITY = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Fragment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__FRAGMENT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Xatkit.impl.RequireContextImpl <em>Require Context</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Xatkit.impl.RequireContextImpl
+	 * @see Xatkit.impl.XatkitPackageImpl#getRequireContext()
+	 * @generated
+	 */
+	int REQUIRE_CONTEXT = 20;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRE_CONTEXT__CONTEXT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Continue</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRE_CONTEXT__CONTINUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Require Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRE_CONTEXT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Require Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRE_CONTEXT_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link Xatkit.XatkitBot <em>Bot</em>}'.
@@ -598,6 +1021,27 @@ public interface XatkitPackage extends EPackage {
 	EReference getXatkitBot_DefaultEntities();
 
 	/**
+	 * Returns the meta object for class '{@link Xatkit.Element <em>Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Element</em>'.
+	 * @see Xatkit.Element
+	 * @generated
+	 */
+	EClass getElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Xatkit.Element#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see Xatkit.Element#getName()
+	 * @see #getElement()
+	 * @generated
+	 */
+	EAttribute getElement_Name();
+
+	/**
 	 * Returns the meta object for class '{@link Xatkit.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -606,17 +1050,6 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntity();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Xatkit.Entity#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see Xatkit.Entity#getName()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EAttribute getEntity_Name();
 
 	/**
 	 * Returns the meta object for class '{@link Xatkit.Intent <em>Intent</em>}'.
@@ -638,6 +1071,28 @@ public interface XatkitPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIntent_Inputs();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Xatkit.Intent#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Context</em>'.
+	 * @see Xatkit.Intent#getContext()
+	 * @see #getIntent()
+	 * @generated
+	 */
+	EReference getIntent_Context();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Xatkit.Intent#getRequires <em>Requires</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Requires</em>'.
+	 * @see Xatkit.Intent#getRequires()
+	 * @see #getIntent()
+	 * @generated
+	 */
+	EReference getIntent_Requires();
 
 	/**
 	 * Returns the meta object for class '{@link Xatkit.Mapping <em>Mapping</em>}'.
@@ -735,6 +1190,27 @@ public interface XatkitPackage extends EPackage {
 	EReference getComplexEntry_Tokens();
 
 	/**
+	 * Returns the meta object for class '{@link Xatkit.Token <em>Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Token</em>'.
+	 * @see Xatkit.Token
+	 * @generated
+	 */
+	EClass getToken();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Xatkit.Token#getPos <em>Pos</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pos</em>'.
+	 * @see Xatkit.Token#getPos()
+	 * @see #getToken()
+	 * @generated
+	 */
+	EAttribute getToken_Pos();
+
+	/**
 	 * Returns the meta object for class '{@link Xatkit.ComplexEntryToken <em>Complex Entry Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -745,15 +1221,14 @@ public interface XatkitPackage extends EPackage {
 	EClass getComplexEntryToken();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Xatkit.ComplexEntryToken#getPos <em>Pos</em>}'.
+	 * Returns the meta object for class '{@link Xatkit.LiteralCEToken <em>Literal CE Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pos</em>'.
-	 * @see Xatkit.ComplexEntryToken#getPos()
-	 * @see #getComplexEntryToken()
+	 * @return the meta object for class '<em>Literal CE Token</em>'.
+	 * @see Xatkit.LiteralCEToken
 	 * @generated
 	 */
-	EAttribute getComplexEntryToken_Pos();
+	EClass getLiteralCEToken();
 
 	/**
 	 * Returns the meta object for class '{@link Xatkit.EntityToken <em>Entity Token</em>}'.
@@ -818,6 +1293,143 @@ public interface XatkitPackage extends EPackage {
 	EClass getInput();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link Xatkit.Input#getTokens <em>Tokens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tokens</em>'.
+	 * @see Xatkit.Input#getTokens()
+	 * @see #getInput()
+	 * @generated
+	 */
+	EReference getInput_Tokens();
+
+	/**
+	 * Returns the meta object for class '{@link Xatkit.InputToken <em>Input Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Input Token</em>'.
+	 * @see Xatkit.InputToken
+	 * @generated
+	 */
+	EClass getInputToken();
+
+	/**
+	 * Returns the meta object for class '{@link Xatkit.LiteralInputToken <em>Literal Input Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Literal Input Token</em>'.
+	 * @see Xatkit.LiteralInputToken
+	 * @generated
+	 */
+	EClass getLiteralInputToken();
+
+	/**
+	 * Returns the meta object for class '{@link Xatkit.ParameterToken <em>Parameter Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter Token</em>'.
+	 * @see Xatkit.ParameterToken
+	 * @generated
+	 */
+	EClass getParameterToken();
+
+	/**
+	 * Returns the meta object for the reference '{@link Xatkit.ParameterToken#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parameter</em>'.
+	 * @see Xatkit.ParameterToken#getParameter()
+	 * @see #getParameterToken()
+	 * @generated
+	 */
+	EReference getParameterToken_Parameter();
+
+	/**
+	 * Returns the meta object for class '{@link Xatkit.Context <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Context</em>'.
+	 * @see Xatkit.Context
+	 * @generated
+	 */
+	EClass getContext();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Xatkit.Context#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see Xatkit.Context#getParameters()
+	 * @see #getContext()
+	 * @generated
+	 */
+	EReference getContext_Parameters();
+
+	/**
+	 * Returns the meta object for class '{@link Xatkit.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter</em>'.
+	 * @see Xatkit.Parameter
+	 * @generated
+	 */
+	EClass getParameter();
+
+	/**
+	 * Returns the meta object for the reference '{@link Xatkit.Parameter#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity</em>'.
+	 * @see Xatkit.Parameter#getEntity()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EReference getParameter_Entity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Xatkit.Parameter#getFragment <em>Fragment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fragment</em>'.
+	 * @see Xatkit.Parameter#getFragment()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Fragment();
+
+	/**
+	 * Returns the meta object for class '{@link Xatkit.RequireContext <em>Require Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Require Context</em>'.
+	 * @see Xatkit.RequireContext
+	 * @generated
+	 */
+	EClass getRequireContext();
+
+	/**
+	 * Returns the meta object for the reference '{@link Xatkit.RequireContext#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Context</em>'.
+	 * @see Xatkit.RequireContext#getContext()
+	 * @see #getRequireContext()
+	 * @generated
+	 */
+	EReference getRequireContext_Context();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Xatkit.RequireContext#isContinue <em>Continue</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Continue</em>'.
+	 * @see Xatkit.RequireContext#isContinue()
+	 * @see #getRequireContext()
+	 * @generated
+	 */
+	EAttribute getRequireContext_Continue();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -875,6 +1487,24 @@ public interface XatkitPackage extends EPackage {
 		EReference XATKIT_BOT__DEFAULT_ENTITIES = eINSTANCE.getXatkitBot_DefaultEntities();
 
 		/**
+		 * The meta object literal for the '{@link Xatkit.impl.ElementImpl <em>Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.ElementImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getElement()
+		 * @generated
+		 */
+		EClass ELEMENT = eINSTANCE.getElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT__NAME = eINSTANCE.getElement_Name();
+
+		/**
 		 * The meta object literal for the '{@link Xatkit.impl.EntityImpl <em>Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -883,14 +1513,6 @@ public interface XatkitPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY = eINSTANCE.getEntity();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
 
 		/**
 		 * The meta object literal for the '{@link Xatkit.impl.IntentImpl <em>Intent</em>}' class.
@@ -909,6 +1531,22 @@ public interface XatkitPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTENT__INPUTS = eINSTANCE.getIntent_Inputs();
+
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENT__CONTEXT = eINSTANCE.getIntent_Context();
+
+		/**
+		 * The meta object literal for the '<em><b>Requires</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENT__REQUIRES = eINSTANCE.getIntent_Requires();
 
 		/**
 		 * The meta object literal for the '{@link Xatkit.impl.MappingImpl <em>Mapping</em>}' class.
@@ -991,6 +1629,24 @@ public interface XatkitPackage extends EPackage {
 		EReference COMPLEX_ENTRY__TOKENS = eINSTANCE.getComplexEntry_Tokens();
 
 		/**
+		 * The meta object literal for the '{@link Xatkit.impl.TokenImpl <em>Token</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.TokenImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getToken()
+		 * @generated
+		 */
+		EClass TOKEN = eINSTANCE.getToken();
+
+		/**
+		 * The meta object literal for the '<em><b>Pos</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TOKEN__POS = eINSTANCE.getToken_Pos();
+
+		/**
 		 * The meta object literal for the '{@link Xatkit.impl.ComplexEntryTokenImpl <em>Complex Entry Token</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1001,12 +1657,14 @@ public interface XatkitPackage extends EPackage {
 		EClass COMPLEX_ENTRY_TOKEN = eINSTANCE.getComplexEntryToken();
 
 		/**
-		 * The meta object literal for the '<em><b>Pos</b></em>' attribute feature.
+		 * The meta object literal for the '{@link Xatkit.impl.LiteralCETokenImpl <em>Literal CE Token</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.LiteralCETokenImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getLiteralCEToken()
 		 * @generated
 		 */
-		EAttribute COMPLEX_ENTRY_TOKEN__POS = eINSTANCE.getComplexEntryToken_Pos();
+		EClass LITERAL_CE_TOKEN = eINSTANCE.getLiteralCEToken();
 
 		/**
 		 * The meta object literal for the '{@link Xatkit.impl.EntityTokenImpl <em>Entity Token</em>}' class.
@@ -1063,6 +1721,122 @@ public interface XatkitPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INPUT = eINSTANCE.getInput();
+
+		/**
+		 * The meta object literal for the '<em><b>Tokens</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INPUT__TOKENS = eINSTANCE.getInput_Tokens();
+
+		/**
+		 * The meta object literal for the '{@link Xatkit.impl.InputTokenImpl <em>Input Token</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.InputTokenImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getInputToken()
+		 * @generated
+		 */
+		EClass INPUT_TOKEN = eINSTANCE.getInputToken();
+
+		/**
+		 * The meta object literal for the '{@link Xatkit.impl.LiteralInputTokenImpl <em>Literal Input Token</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.LiteralInputTokenImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getLiteralInputToken()
+		 * @generated
+		 */
+		EClass LITERAL_INPUT_TOKEN = eINSTANCE.getLiteralInputToken();
+
+		/**
+		 * The meta object literal for the '{@link Xatkit.impl.ParameterTokenImpl <em>Parameter Token</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.ParameterTokenImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getParameterToken()
+		 * @generated
+		 */
+		EClass PARAMETER_TOKEN = eINSTANCE.getParameterToken();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER_TOKEN__PARAMETER = eINSTANCE.getParameterToken_Parameter();
+
+		/**
+		 * The meta object literal for the '{@link Xatkit.impl.ContextImpl <em>Context</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.ContextImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getContext()
+		 * @generated
+		 */
+		EClass CONTEXT = eINSTANCE.getContext();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTEXT__PARAMETERS = eINSTANCE.getContext_Parameters();
+
+		/**
+		 * The meta object literal for the '{@link Xatkit.impl.ParameterImpl <em>Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.ParameterImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getParameter()
+		 * @generated
+		 */
+		EClass PARAMETER = eINSTANCE.getParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER__ENTITY = eINSTANCE.getParameter_Entity();
+
+		/**
+		 * The meta object literal for the '<em><b>Fragment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__FRAGMENT = eINSTANCE.getParameter_Fragment();
+
+		/**
+		 * The meta object literal for the '{@link Xatkit.impl.RequireContextImpl <em>Require Context</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Xatkit.impl.RequireContextImpl
+		 * @see Xatkit.impl.XatkitPackageImpl#getRequireContext()
+		 * @generated
+		 */
+		EClass REQUIRE_CONTEXT = eINSTANCE.getRequireContext();
+
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIRE_CONTEXT__CONTEXT = eINSTANCE.getRequireContext_Context();
+
+		/**
+		 * The meta object literal for the '<em><b>Continue</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REQUIRE_CONTEXT__CONTINUE = eINSTANCE.getRequireContext_Continue();
 
 	}
 

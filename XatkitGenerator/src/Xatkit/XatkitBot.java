@@ -66,4 +66,6 @@ public interface XatkitBot extends EObject {
 	
 	void removeEmptyEnities();
 
+	Intent getIntent(String name);
+
 } // XatkitBot

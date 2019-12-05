@@ -158,4 +158,19 @@ public class MappingImpl extends EntityImpl implements Mapping {
 		return ret;
 	}
 
+	@Override
+	public String toString() {
+		return "MappingImpl [name="+getName()+" entries=" + entries + "]";
+	}
+
+	@Override
+	public String getDefaultValue(Integer index) {
+
+		if (getEntries().size()<=index) {
+			index=getEntries().size()-1;
+		}
+		Entry entry = getEntries().get(index);
+		return entry.getValue();
+	}
+
 } //MappingImpl

@@ -188,22 +188,9 @@ public class EntryImpl extends MinimalEObjectImpl.Container implements Entry {
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(", synonyms: ");
-		result.append(synonyms);
-		result.append(')');
-		return result.toString();
+		return "EntryImpl [value=" + value + "]";
 	}
 
 	@Override

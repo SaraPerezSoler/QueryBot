@@ -5,14 +5,23 @@ package Xatkit.impl;
 import Xatkit.ComplexEntry;
 import Xatkit.ComplexEntryToken;
 import Xatkit.Composite;
+import Xatkit.Context;
 import Xatkit.DefaultEntity;
+import Xatkit.Element;
 import Xatkit.Entity;
 import Xatkit.EntityToken;
 import Xatkit.Entry;
 import Xatkit.Input;
+import Xatkit.InputToken;
 import Xatkit.Intent;
+import Xatkit.LiteralCEToken;
+import Xatkit.LiteralInputToken;
 import Xatkit.LiteralToken;
 import Xatkit.Mapping;
+import Xatkit.Parameter;
+import Xatkit.ParameterToken;
+import Xatkit.RequireContext;
+import Xatkit.Token;
 import Xatkit.XatkitBot;
 import Xatkit.XatkitFactory;
 import Xatkit.XatkitPackage;
@@ -36,6 +45,13 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * @generated
 	 */
 	private EClass xatkitBotEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass elementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,7 +100,21 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass tokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass complexEntryTokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass literalCETokenEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,6 +143,48 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * @generated
 	 */
 	private EClass inputEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass inputTokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass literalInputTokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterTokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contextEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass requireContextEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -221,8 +293,8 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getEntity() {
-		return entityEClass;
+	public EClass getElement() {
+		return elementEClass;
 	}
 
 	/**
@@ -231,8 +303,18 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEntity_Name() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
+	public EAttribute getElement_Name() {
+		return (EAttribute)elementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEntity() {
+		return entityEClass;
 	}
 
 	/**
@@ -253,6 +335,26 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	@Override
 	public EReference getIntent_Inputs() {
 		return (EReference)intentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getIntent_Context() {
+		return (EReference)intentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getIntent_Requires() {
+		return (EReference)intentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -351,6 +453,26 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getToken() {
+		return tokenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getToken_Pos() {
+		return (EAttribute)tokenEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getComplexEntryToken() {
 		return complexEntryTokenEClass;
 	}
@@ -361,8 +483,8 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getComplexEntryToken_Pos() {
-		return (EAttribute)complexEntryTokenEClass.getEStructuralFeatures().get(0);
+	public EClass getLiteralCEToken() {
+		return literalCETokenEClass;
 	}
 
 	/**
@@ -431,6 +553,136 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getInput_Tokens() {
+		return (EReference)inputEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getInputToken() {
+		return inputTokenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getLiteralInputToken() {
+		return literalInputTokenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getParameterToken() {
+		return parameterTokenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getParameterToken_Parameter() {
+		return (EReference)parameterTokenEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContext() {
+		return contextEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContext_Parameters() {
+		return (EReference)contextEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getParameter() {
+		return parameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getParameter_Entity() {
+		return (EReference)parameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getParameter_Fragment() {
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRequireContext() {
+		return requireContextEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRequireContext_Context() {
+		return (EReference)requireContextEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRequireContext_Continue() {
+		return (EAttribute)requireContextEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public XatkitFactory getXatkitFactory() {
 		return (XatkitFactory)getEFactoryInstance();
 	}
@@ -459,11 +711,15 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 		createEReference(xatkitBotEClass, XATKIT_BOT__ENTITIES);
 		createEReference(xatkitBotEClass, XATKIT_BOT__DEFAULT_ENTITIES);
 
+		elementEClass = createEClass(ELEMENT);
+		createEAttribute(elementEClass, ELEMENT__NAME);
+
 		entityEClass = createEClass(ENTITY);
-		createEAttribute(entityEClass, ENTITY__NAME);
 
 		intentEClass = createEClass(INTENT);
 		createEReference(intentEClass, INTENT__INPUTS);
+		createEReference(intentEClass, INTENT__CONTEXT);
+		createEReference(intentEClass, INTENT__REQUIRES);
 
 		mappingEClass = createEClass(MAPPING);
 		createEReference(mappingEClass, MAPPING__ENTRIES);
@@ -478,18 +734,41 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 		complexEntryEClass = createEClass(COMPLEX_ENTRY);
 		createEReference(complexEntryEClass, COMPLEX_ENTRY__TOKENS);
 
-		complexEntryTokenEClass = createEClass(COMPLEX_ENTRY_TOKEN);
-		createEAttribute(complexEntryTokenEClass, COMPLEX_ENTRY_TOKEN__POS);
-
-		entityTokenEClass = createEClass(ENTITY_TOKEN);
-		createEReference(entityTokenEClass, ENTITY_TOKEN__ENTITY);
+		tokenEClass = createEClass(TOKEN);
+		createEAttribute(tokenEClass, TOKEN__POS);
 
 		literalTokenEClass = createEClass(LITERAL_TOKEN);
 		createEAttribute(literalTokenEClass, LITERAL_TOKEN__LITERAL);
 
+		complexEntryTokenEClass = createEClass(COMPLEX_ENTRY_TOKEN);
+
+		literalCETokenEClass = createEClass(LITERAL_CE_TOKEN);
+
+		entityTokenEClass = createEClass(ENTITY_TOKEN);
+		createEReference(entityTokenEClass, ENTITY_TOKEN__ENTITY);
+
 		defaultEntityEClass = createEClass(DEFAULT_ENTITY);
 
 		inputEClass = createEClass(INPUT);
+		createEReference(inputEClass, INPUT__TOKENS);
+
+		inputTokenEClass = createEClass(INPUT_TOKEN);
+
+		literalInputTokenEClass = createEClass(LITERAL_INPUT_TOKEN);
+
+		parameterTokenEClass = createEClass(PARAMETER_TOKEN);
+		createEReference(parameterTokenEClass, PARAMETER_TOKEN__PARAMETER);
+
+		contextEClass = createEClass(CONTEXT);
+		createEReference(contextEClass, CONTEXT__PARAMETERS);
+
+		parameterEClass = createEClass(PARAMETER);
+		createEReference(parameterEClass, PARAMETER__ENTITY);
+		createEAttribute(parameterEClass, PARAMETER__FRAGMENT);
+
+		requireContextEClass = createEClass(REQUIRE_CONTEXT);
+		createEReference(requireContextEClass, REQUIRE_CONTEXT__CONTEXT);
+		createEAttribute(requireContextEClass, REQUIRE_CONTEXT__CONTINUE);
 	}
 
 	/**
@@ -520,11 +799,21 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		entityEClass.getESuperTypes().add(this.getElement());
+		intentEClass.getESuperTypes().add(this.getElement());
 		mappingEClass.getESuperTypes().add(this.getEntity());
 		compositeEClass.getESuperTypes().add(this.getEntity());
+		complexEntryTokenEClass.getESuperTypes().add(this.getToken());
+		literalCETokenEClass.getESuperTypes().add(this.getComplexEntryToken());
+		literalCETokenEClass.getESuperTypes().add(this.getLiteralToken());
 		entityTokenEClass.getESuperTypes().add(this.getComplexEntryToken());
-		literalTokenEClass.getESuperTypes().add(this.getComplexEntryToken());
 		defaultEntityEClass.getESuperTypes().add(this.getEntity());
+		inputTokenEClass.getESuperTypes().add(this.getToken());
+		literalInputTokenEClass.getESuperTypes().add(this.getLiteralToken());
+		literalInputTokenEClass.getESuperTypes().add(this.getInputToken());
+		parameterTokenEClass.getESuperTypes().add(this.getInputToken());
+		contextEClass.getESuperTypes().add(this.getElement());
+		parameterEClass.getESuperTypes().add(this.getElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(xatkitBotEClass, XatkitBot.class, "XatkitBot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -532,11 +821,15 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 		initEReference(getXatkitBot_Entities(), this.getEntity(), null, "entities", null, 1, -1, XatkitBot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getXatkitBot_DefaultEntities(), this.getDefaultEntity(), null, "defaultEntities", null, 1, -1, XatkitBot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(intentEClass, Intent.class, "Intent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIntent_Inputs(), this.getInput(), null, "inputs", null, 1, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntent_Context(), this.getContext(), null, "context", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntent_Requires(), this.getRequireContext(), null, "requires", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mappingEClass, Mapping.class, "Mapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMapping_Entries(), this.getEntry(), null, "entries", null, 1, -1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -551,18 +844,41 @@ public class XatkitPackageImpl extends EPackageImpl implements XatkitPackage {
 		initEClass(complexEntryEClass, ComplexEntry.class, "ComplexEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComplexEntry_Tokens(), this.getComplexEntryToken(), null, "tokens", null, 1, -1, ComplexEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(tokenEClass, Token.class, "Token", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getToken_Pos(), ecorePackage.getEInt(), "pos", null, 1, 1, Token.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(literalTokenEClass, LiteralToken.class, "LiteralToken", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLiteralToken_Literal(), ecorePackage.getEString(), "literal", null, 1, 1, LiteralToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(complexEntryTokenEClass, ComplexEntryToken.class, "ComplexEntryToken", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComplexEntryToken_Pos(), ecorePackage.getEInt(), "pos", null, 1, 1, ComplexEntryToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(literalCETokenEClass, LiteralCEToken.class, "LiteralCEToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityTokenEClass, EntityToken.class, "EntityToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntityToken_Entity(), this.getEntity(), null, "entity", null, 1, 1, EntityToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(literalTokenEClass, LiteralToken.class, "LiteralToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLiteralToken_Literal(), ecorePackage.getEString(), "literal", null, 1, 1, LiteralToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(defaultEntityEClass, DefaultEntity.class, "DefaultEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInput_Tokens(), this.getInputToken(), null, "tokens", null, 1, -1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(inputTokenEClass, InputToken.class, "InputToken", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(literalInputTokenEClass, LiteralInputToken.class, "LiteralInputToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(parameterTokenEClass, ParameterToken.class, "ParameterToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameterToken_Parameter(), this.getParameter(), null, "parameter", null, 1, 1, ParameterToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getContext_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameter_Entity(), this.getEntity(), null, "entity", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_Fragment(), ecorePackage.getEString(), "fragment", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(requireContextEClass, RequireContext.class, "RequireContext", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRequireContext_Context(), this.getContext(), null, "context", null, 1, 1, RequireContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequireContext_Continue(), ecorePackage.getEBoolean(), "continue", null, 1, 1, RequireContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

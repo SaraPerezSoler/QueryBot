@@ -3,8 +3,11 @@
 package Xatkit.impl;
 
 import Xatkit.ComplexEntry;
+import Xatkit.ComplexEntryToken;
 import Xatkit.Composite;
 import Xatkit.Entity;
+import Xatkit.EntityToken;
+import Xatkit.LiteralCEToken;
 import Xatkit.XatkitPackage;
 
 import java.util.ArrayList;
@@ -170,6 +173,28 @@ public class CompositeImpl extends EntityImpl implements Composite {
 			ret +="\t"+ entry.getEntryString();
 		}
 		ret += "}\n";
+		return ret;
+	}
+
+	@Override
+	public String toString() {
+		return "CompositeImpl [name="+getName()+" complexEntries=" + complexEntries + "]";
+	}
+
+	@Override
+	public String getDefaultValue(Integer index) {
+		if (getComplexEntries().size()<=index) {
+			index=getComplexEntries().size()-1;
+		}
+		String ret= "";
+		ComplexEntry entry = getComplexEntries().get(index);
+		for (ComplexEntryToken token: entry.getTokens()) {
+			if (token instanceof LiteralCEToken) {
+				ret += ((LiteralCEToken) token).getLiteral()+" ";
+			}else {
+				ret += ((EntityToken)token).getEntity().getDefaultValue(0)+" ";
+			}
+		}
 		return ret;
 	}
 

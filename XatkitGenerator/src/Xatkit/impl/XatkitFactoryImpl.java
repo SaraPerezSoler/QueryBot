@@ -56,15 +56,21 @@ public class XatkitFactoryImpl extends EFactoryImpl implements XatkitFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case XatkitPackage.XATKIT_BOT: return createXatkitBot();
+			case XatkitPackage.ELEMENT: return createElement();
 			case XatkitPackage.INTENT: return createIntent();
 			case XatkitPackage.MAPPING: return createMapping();
 			case XatkitPackage.COMPOSITE: return createComposite();
 			case XatkitPackage.ENTRY: return createEntry();
 			case XatkitPackage.COMPLEX_ENTRY: return createComplexEntry();
+			case XatkitPackage.LITERAL_CE_TOKEN: return createLiteralCEToken();
 			case XatkitPackage.ENTITY_TOKEN: return createEntityToken();
-			case XatkitPackage.LITERAL_TOKEN: return createLiteralToken();
 			case XatkitPackage.DEFAULT_ENTITY: return createDefaultEntity();
 			case XatkitPackage.INPUT: return createInput();
+			case XatkitPackage.LITERAL_INPUT_TOKEN: return createLiteralInputToken();
+			case XatkitPackage.PARAMETER_TOKEN: return createParameterToken();
+			case XatkitPackage.CONTEXT: return createContext();
+			case XatkitPackage.PARAMETER: return createParameter();
+			case XatkitPackage.REQUIRE_CONTEXT: return createRequireContext();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -79,6 +85,17 @@ public class XatkitFactoryImpl extends EFactoryImpl implements XatkitFactory {
 	public XatkitBot createXatkitBot() {
 		XatkitBotImpl xatkitBot = new XatkitBotImpl();
 		return xatkitBot;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Element createElement() {
+		ElementImpl element = new ElementImpl();
+		return element;
 	}
 
 	/**
@@ -153,9 +170,9 @@ public class XatkitFactoryImpl extends EFactoryImpl implements XatkitFactory {
 	 * @generated
 	 */
 	@Override
-	public LiteralToken createLiteralToken() {
-		LiteralTokenImpl literalToken = new LiteralTokenImpl();
-		return literalToken;
+	public LiteralCEToken createLiteralCEToken() {
+		LiteralCETokenImpl literalCEToken = new LiteralCETokenImpl();
+		return literalCEToken;
 	}
 
 	/**
@@ -178,6 +195,61 @@ public class XatkitFactoryImpl extends EFactoryImpl implements XatkitFactory {
 	public Input createInput() {
 		InputImpl input = new InputImpl();
 		return input;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LiteralInputToken createLiteralInputToken() {
+		LiteralInputTokenImpl literalInputToken = new LiteralInputTokenImpl();
+		return literalInputToken;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ParameterToken createParameterToken() {
+		ParameterTokenImpl parameterToken = new ParameterTokenImpl();
+		return parameterToken;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Context createContext() {
+		ContextImpl context = new ContextImpl();
+		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RequireContext createRequireContext() {
+		RequireContextImpl requireContext = new RequireContextImpl();
+		return requireContext;
 	}
 
 	/**

@@ -7,6 +7,8 @@ import Xatkit.XatkitPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import Utils.Utils;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Default Entity</b></em>'.
@@ -37,6 +39,12 @@ public class DefaultEntityImpl extends EntityImpl implements DefaultEntity {
 	@Override
 	public String generateEntityString() {
 		return "";
+	}
+
+	@Override
+	public String getDefaultValue(Integer index) {
+		
+		return Utils.getDefaultValue(getName(), index);
 	}
 
 } //DefaultEntityImpl

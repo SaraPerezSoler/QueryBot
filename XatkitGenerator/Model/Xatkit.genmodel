@@ -11,11 +11,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//XatkitBot/entities"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//XatkitBot/defaultEntities"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Xatkit.ecore#//Entity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//Entity/name"/>
+    <genClasses ecoreClass="Xatkit.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//Element/name"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="Xatkit.ecore#//Entity"/>
     <genClasses ecoreClass="Xatkit.ecore#//Intent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//Intent/inputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//Intent/context"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//Intent/requires"/>
     </genClasses>
     <genClasses ecoreClass="Xatkit.ecore#//Mapping">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//Mapping/entries"/>
@@ -30,16 +33,36 @@
     <genClasses ecoreClass="Xatkit.ecore#//ComplexEntry">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//ComplexEntry/tokens"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Xatkit.ecore#//ComplexEntryToken">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//ComplexEntryToken/pos"/>
-    </genClasses>
-    <genClasses ecoreClass="Xatkit.ecore#//EntityToken">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Xatkit.ecore#//EntityToken/entity"/>
+    <genClasses image="false" ecoreClass="Xatkit.ecore#//Token">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//Token/pos"/>
     </genClasses>
     <genClasses ecoreClass="Xatkit.ecore#//LiteralToken">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//LiteralToken/literal"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="Xatkit.ecore#//ComplexEntryToken"/>
+    <genClasses ecoreClass="Xatkit.ecore#//LiteralCEToken"/>
+    <genClasses ecoreClass="Xatkit.ecore#//EntityToken">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Xatkit.ecore#//EntityToken/entity"/>
+    </genClasses>
     <genClasses ecoreClass="Xatkit.ecore#//DefaultEntity"/>
-    <genClasses ecoreClass="Xatkit.ecore#//Input"/>
+    <genClasses ecoreClass="Xatkit.ecore#//Input">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Xatkit.ecore#//Input/tokens"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Xatkit.ecore#//InputToken"/>
+    <genClasses ecoreClass="Xatkit.ecore#//LiteralInputToken"/>
+    <genClasses ecoreClass="Xatkit.ecore#//ParameterToken">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Xatkit.ecore#//ParameterToken/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="Xatkit.ecore#//Context">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xatkit.ecore#//Context/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="Xatkit.ecore#//Parameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Xatkit.ecore#//Parameter/entity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//Parameter/fragment"/>
+    </genClasses>
+    <genClasses ecoreClass="Xatkit.ecore#//RequireContext">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Xatkit.ecore#//RequireContext/context"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xatkit.ecore#//RequireContext/continue"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

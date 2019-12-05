@@ -71,15 +71,23 @@ public class XatkitSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case XatkitPackage.ELEMENT: {
+				Element element = (Element)theEObject;
+				T result = caseElement(element);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case XatkitPackage.ENTITY: {
 				Entity entity = (Entity)theEObject;
 				T result = caseEntity(entity);
+				if (result == null) result = caseElement(entity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case XatkitPackage.INTENT: {
 				Intent intent = (Intent)theEObject;
 				T result = caseIntent(intent);
+				if (result == null) result = caseElement(intent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -87,6 +95,7 @@ public class XatkitSwitch<T> extends Switch<T> {
 				Mapping mapping = (Mapping)theEObject;
 				T result = caseMapping(mapping);
 				if (result == null) result = caseEntity(mapping);
+				if (result == null) result = caseElement(mapping);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -94,6 +103,7 @@ public class XatkitSwitch<T> extends Switch<T> {
 				Composite composite = (Composite)theEObject;
 				T result = caseComposite(composite);
 				if (result == null) result = caseEntity(composite);
+				if (result == null) result = caseElement(composite);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,9 +119,31 @@ public class XatkitSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case XatkitPackage.TOKEN: {
+				Token token = (Token)theEObject;
+				T result = caseToken(token);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XatkitPackage.LITERAL_TOKEN: {
+				LiteralToken literalToken = (LiteralToken)theEObject;
+				T result = caseLiteralToken(literalToken);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case XatkitPackage.COMPLEX_ENTRY_TOKEN: {
 				ComplexEntryToken complexEntryToken = (ComplexEntryToken)theEObject;
 				T result = caseComplexEntryToken(complexEntryToken);
+				if (result == null) result = caseToken(complexEntryToken);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XatkitPackage.LITERAL_CE_TOKEN: {
+				LiteralCEToken literalCEToken = (LiteralCEToken)theEObject;
+				T result = caseLiteralCEToken(literalCEToken);
+				if (result == null) result = caseComplexEntryToken(literalCEToken);
+				if (result == null) result = caseLiteralToken(literalCEToken);
+				if (result == null) result = caseToken(literalCEToken);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -119,13 +151,7 @@ public class XatkitSwitch<T> extends Switch<T> {
 				EntityToken entityToken = (EntityToken)theEObject;
 				T result = caseEntityToken(entityToken);
 				if (result == null) result = caseComplexEntryToken(entityToken);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case XatkitPackage.LITERAL_TOKEN: {
-				LiteralToken literalToken = (LiteralToken)theEObject;
-				T result = caseLiteralToken(literalToken);
-				if (result == null) result = caseComplexEntryToken(literalToken);
+				if (result == null) result = caseToken(entityToken);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -133,12 +159,57 @@ public class XatkitSwitch<T> extends Switch<T> {
 				DefaultEntity defaultEntity = (DefaultEntity)theEObject;
 				T result = caseDefaultEntity(defaultEntity);
 				if (result == null) result = caseEntity(defaultEntity);
+				if (result == null) result = caseElement(defaultEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case XatkitPackage.INPUT: {
 				Input input = (Input)theEObject;
 				T result = caseInput(input);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XatkitPackage.INPUT_TOKEN: {
+				InputToken inputToken = (InputToken)theEObject;
+				T result = caseInputToken(inputToken);
+				if (result == null) result = caseToken(inputToken);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XatkitPackage.LITERAL_INPUT_TOKEN: {
+				LiteralInputToken literalInputToken = (LiteralInputToken)theEObject;
+				T result = caseLiteralInputToken(literalInputToken);
+				if (result == null) result = caseLiteralToken(literalInputToken);
+				if (result == null) result = caseInputToken(literalInputToken);
+				if (result == null) result = caseToken(literalInputToken);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XatkitPackage.PARAMETER_TOKEN: {
+				ParameterToken parameterToken = (ParameterToken)theEObject;
+				T result = caseParameterToken(parameterToken);
+				if (result == null) result = caseInputToken(parameterToken);
+				if (result == null) result = caseToken(parameterToken);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XatkitPackage.CONTEXT: {
+				Context context = (Context)theEObject;
+				T result = caseContext(context);
+				if (result == null) result = caseElement(context);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XatkitPackage.PARAMETER: {
+				Parameter parameter = (Parameter)theEObject;
+				T result = caseParameter(parameter);
+				if (result == null) result = caseElement(parameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XatkitPackage.REQUIRE_CONTEXT: {
+				RequireContext requireContext = (RequireContext)theEObject;
+				T result = caseRequireContext(requireContext);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -158,6 +229,21 @@ public class XatkitSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseXatkitBot(XatkitBot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElement(Element object) {
 		return null;
 	}
 
@@ -252,6 +338,21 @@ public class XatkitSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Token</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseToken(Token object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Complex Entry Token</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -263,6 +364,21 @@ public class XatkitSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComplexEntryToken(ComplexEntryToken object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Literal CE Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Literal CE Token</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLiteralCEToken(LiteralCEToken object) {
 		return null;
 	}
 
@@ -323,6 +439,96 @@ public class XatkitSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInput(Input object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Input Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Input Token</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInputToken(InputToken object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Literal Input Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Literal Input Token</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLiteralInputToken(LiteralInputToken object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter Token</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameterToken(ParameterToken object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Context</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContext(Context object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameter(Parameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Require Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Require Context</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRequireContext(RequireContext object) {
 		return null;
 	}
 

@@ -31,6 +31,15 @@ public interface XatkitFactory extends EFactory {
 	XatkitBot createXatkitBot();
 
 	/**
+	 * Returns a new object of class '<em>Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Element</em>'.
+	 * @generated
+	 */
+	Element createElement();
+
+	/**
 	 * Returns a new object of class '<em>Intent</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,13 +94,13 @@ public interface XatkitFactory extends EFactory {
 	EntityToken createEntityToken();
 
 	/**
-	 * Returns a new object of class '<em>Literal Token</em>'.
+	 * Returns a new object of class '<em>Literal CE Token</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Literal Token</em>'.
+	 * @return a new object of class '<em>Literal CE Token</em>'.
 	 * @generated
 	 */
-	LiteralToken createLiteralToken();
+	LiteralCEToken createLiteralCEToken();
 
 	/**
 	 * Returns a new object of class '<em>Default Entity</em>'.
@@ -110,6 +119,51 @@ public interface XatkitFactory extends EFactory {
 	 * @generated
 	 */
 	Input createInput();
+
+	/**
+	 * Returns a new object of class '<em>Literal Input Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Literal Input Token</em>'.
+	 * @generated
+	 */
+	LiteralInputToken createLiteralInputToken();
+
+	/**
+	 * Returns a new object of class '<em>Parameter Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter Token</em>'.
+	 * @generated
+	 */
+	ParameterToken createParameterToken();
+
+	/**
+	 * Returns a new object of class '<em>Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Context</em>'.
+	 * @generated
+	 */
+	Context createContext();
+
+	/**
+	 * Returns a new object of class '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter</em>'.
+	 * @generated
+	 */
+	Parameter createParameter();
+
+	/**
+	 * Returns a new object of class '<em>Require Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Require Context</em>'.
+	 * @generated
+	 */
+	RequireContext createRequireContext();
 
 	/**
 	 * Returns the package supported by this factory.

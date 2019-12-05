@@ -2,56 +2,49 @@
  */
 package Xatkit.impl;
 
-import Xatkit.Input;
-import Xatkit.InputToken;
-import Xatkit.LiteralInputToken;
-import Xatkit.ParameterToken;
+import Xatkit.Context;
+import Xatkit.Parameter;
 import Xatkit.XatkitPackage;
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Input</b></em>'.
+ * An implementation of the model object '<em><b>Context</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Xatkit.impl.InputImpl#getTokens <em>Tokens</em>}</li>
+ *   <li>{@link Xatkit.impl.ContextImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InputImpl extends MinimalEObjectImpl.Container implements Input {
+public class ContextImpl extends ElementImpl implements Context {
 	/**
-	 * The cached value of the '{@link #getTokens() <em>Tokens</em>}' containment reference list.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTokens()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<InputToken> tokens;
+	protected EList<Parameter> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InputImpl() {
+	protected ContextImpl() {
 		super();
 	}
 
@@ -62,7 +55,7 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return XatkitPackage.Literals.INPUT;
+		return XatkitPackage.Literals.CONTEXT;
 	}
 
 	/**
@@ -71,11 +64,11 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	 * @generated
 	 */
 	@Override
-	public EList<InputToken> getTokens() {
-		if (tokens == null) {
-			tokens = new EObjectContainmentEList<InputToken>(InputToken.class, this, XatkitPackage.INPUT__TOKENS);
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, XatkitPackage.CONTEXT__PARAMETERS);
 		}
-		return tokens;
+		return parameters;
 	}
 
 	/**
@@ -86,8 +79,8 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case XatkitPackage.INPUT__TOKENS:
-				return ((InternalEList<?>)getTokens()).basicRemove(otherEnd, msgs);
+			case XatkitPackage.CONTEXT__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -100,8 +93,8 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case XatkitPackage.INPUT__TOKENS:
-				return getTokens();
+			case XatkitPackage.CONTEXT__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,9 +108,9 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case XatkitPackage.INPUT__TOKENS:
-				getTokens().clear();
-				getTokens().addAll((Collection<? extends InputToken>)newValue);
+			case XatkitPackage.CONTEXT__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -131,8 +124,8 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case XatkitPackage.INPUT__TOKENS:
-				getTokens().clear();
+			case XatkitPackage.CONTEXT__PARAMETERS:
+				getParameters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -146,31 +139,29 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case XatkitPackage.INPUT__TOKENS:
-				return tokens != null && !tokens.isEmpty();
+			case XatkitPackage.CONTEXT__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	@Override
-	public String getInputText() {
-		List<InputToken> tokens = getTokens();
-		Collections.sort(tokens, new Comparator<InputToken>() {
-			@Override
-			public int compare(InputToken o1, InputToken o2) {
-				return Integer.compare(o1.getPos(), o2.getPos());
+	public String getContextText() {
+		String ret = getHeader();
+		if (!getParameters().isEmpty()) {
+			ret+=" {\n";
+			for (Parameter param: getParameters()) {
+				ret+=param.getParameterText()+"\n";
 			}
-		});
-		String ret="";
-		for (InputToken token: tokens) {
-			if (token instanceof LiteralInputToken) {
-				ret+= ((LiteralInputToken) token).getLiteral()+" ";
-			}else {
-				ret+= ((ParameterToken)token).getParameter().getFragment()+" ";
-			}
+			ret+="}";
 		}
 		
-		return ret;
+		return ret+="\n";
 	}
 
-} //InputImpl
+	@Override
+	public String getHeader() {
+		return "creates context "+getName();
+	}
+
+} //ContextImpl

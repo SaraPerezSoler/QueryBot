@@ -71,6 +71,10 @@ public class XatkitAdapterFactory extends AdapterFactoryImpl {
 				return createXatkitBotAdapter();
 			}
 			@Override
+			public Adapter caseElement(Element object) {
+				return createElementAdapter();
+			}
+			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
 			}
@@ -95,16 +99,24 @@ public class XatkitAdapterFactory extends AdapterFactoryImpl {
 				return createComplexEntryAdapter();
 			}
 			@Override
-			public Adapter caseComplexEntryToken(ComplexEntryToken object) {
-				return createComplexEntryTokenAdapter();
-			}
-			@Override
-			public Adapter caseEntityToken(EntityToken object) {
-				return createEntityTokenAdapter();
+			public Adapter caseToken(Token object) {
+				return createTokenAdapter();
 			}
 			@Override
 			public Adapter caseLiteralToken(LiteralToken object) {
 				return createLiteralTokenAdapter();
+			}
+			@Override
+			public Adapter caseComplexEntryToken(ComplexEntryToken object) {
+				return createComplexEntryTokenAdapter();
+			}
+			@Override
+			public Adapter caseLiteralCEToken(LiteralCEToken object) {
+				return createLiteralCETokenAdapter();
+			}
+			@Override
+			public Adapter caseEntityToken(EntityToken object) {
+				return createEntityTokenAdapter();
 			}
 			@Override
 			public Adapter caseDefaultEntity(DefaultEntity object) {
@@ -113,6 +125,30 @@ public class XatkitAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseInput(Input object) {
 				return createInputAdapter();
+			}
+			@Override
+			public Adapter caseInputToken(InputToken object) {
+				return createInputTokenAdapter();
+			}
+			@Override
+			public Adapter caseLiteralInputToken(LiteralInputToken object) {
+				return createLiteralInputTokenAdapter();
+			}
+			@Override
+			public Adapter caseParameterToken(ParameterToken object) {
+				return createParameterTokenAdapter();
+			}
+			@Override
+			public Adapter caseContext(Context object) {
+				return createContextAdapter();
+			}
+			@Override
+			public Adapter caseParameter(Parameter object) {
+				return createParameterAdapter();
+			}
+			@Override
+			public Adapter caseRequireContext(RequireContext object) {
+				return createRequireContextAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -145,6 +181,20 @@ public class XatkitAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createXatkitBotAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.Element <em>Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.Element
+	 * @generated
+	 */
+	public Adapter createElementAdapter() {
 		return null;
 	}
 
@@ -233,6 +283,20 @@ public class XatkitAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.Token <em>Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.Token
+	 * @generated
+	 */
+	public Adapter createTokenAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link Xatkit.ComplexEntryToken <em>Complex Entry Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -243,6 +307,20 @@ public class XatkitAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComplexEntryTokenAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.LiteralCEToken <em>Literal CE Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.LiteralCEToken
+	 * @generated
+	 */
+	public Adapter createLiteralCETokenAdapter() {
 		return null;
 	}
 
@@ -299,6 +377,90 @@ public class XatkitAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.InputToken <em>Input Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.InputToken
+	 * @generated
+	 */
+	public Adapter createInputTokenAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.LiteralInputToken <em>Literal Input Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.LiteralInputToken
+	 * @generated
+	 */
+	public Adapter createLiteralInputTokenAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.ParameterToken <em>Parameter Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.ParameterToken
+	 * @generated
+	 */
+	public Adapter createParameterTokenAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.Context <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.Context
+	 * @generated
+	 */
+	public Adapter createContextAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.Parameter
+	 * @generated
+	 */
+	public Adapter createParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Xatkit.RequireContext <em>Require Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Xatkit.RequireContext
+	 * @generated
+	 */
+	public Adapter createRequireContextAdapter() {
 		return null;
 	}
 

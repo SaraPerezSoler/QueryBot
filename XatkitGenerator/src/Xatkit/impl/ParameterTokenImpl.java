@@ -2,8 +2,8 @@
  */
 package Xatkit.impl;
 
-import Xatkit.Entity;
-import Xatkit.EntityToken;
+import Xatkit.Parameter;
+import Xatkit.ParameterToken;
 import Xatkit.XatkitPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,34 +15,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Entity Token</b></em>'.
+ * An implementation of the model object '<em><b>Parameter Token</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Xatkit.impl.EntityTokenImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link Xatkit.impl.ParameterTokenImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EntityTokenImpl extends ComplexEntryTokenImpl implements EntityToken {
+public class ParameterTokenImpl extends InputTokenImpl implements ParameterToken {
 	/**
-	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
+	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntity()
+	 * @see #getParameter()
 	 * @generated
 	 * @ordered
 	 */
-	protected Entity entity;
+	protected Parameter parameter;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EntityTokenImpl() {
+	protected ParameterTokenImpl() {
 		super();
 	}
 
@@ -53,7 +53,7 @@ public class EntityTokenImpl extends ComplexEntryTokenImpl implements EntityToke
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return XatkitPackage.Literals.ENTITY_TOKEN;
+		return XatkitPackage.Literals.PARAMETER_TOKEN;
 	}
 
 	/**
@@ -62,16 +62,16 @@ public class EntityTokenImpl extends ComplexEntryTokenImpl implements EntityToke
 	 * @generated
 	 */
 	@Override
-	public Entity getEntity() {
-		if (entity != null && entity.eIsProxy()) {
-			InternalEObject oldEntity = (InternalEObject)entity;
-			entity = (Entity)eResolveProxy(oldEntity);
-			if (entity != oldEntity) {
+	public Parameter getParameter() {
+		if (parameter != null && parameter.eIsProxy()) {
+			InternalEObject oldParameter = (InternalEObject)parameter;
+			parameter = (Parameter)eResolveProxy(oldParameter);
+			if (parameter != oldParameter) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XatkitPackage.ENTITY_TOKEN__ENTITY, oldEntity, entity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XatkitPackage.PARAMETER_TOKEN__PARAMETER, oldParameter, parameter));
 			}
 		}
-		return entity;
+		return parameter;
 	}
 
 	/**
@@ -79,8 +79,8 @@ public class EntityTokenImpl extends ComplexEntryTokenImpl implements EntityToke
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity basicGetEntity() {
-		return entity;
+	public Parameter basicGetParameter() {
+		return parameter;
 	}
 
 	/**
@@ -89,11 +89,11 @@ public class EntityTokenImpl extends ComplexEntryTokenImpl implements EntityToke
 	 * @generated
 	 */
 	@Override
-	public void setEntity(Entity newEntity) {
-		Entity oldEntity = entity;
-		entity = newEntity;
+	public void setParameter(Parameter newParameter) {
+		Parameter oldParameter = parameter;
+		parameter = newParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XatkitPackage.ENTITY_TOKEN__ENTITY, oldEntity, entity));
+			eNotify(new ENotificationImpl(this, Notification.SET, XatkitPackage.PARAMETER_TOKEN__PARAMETER, oldParameter, parameter));
 	}
 
 	/**
@@ -104,9 +104,9 @@ public class EntityTokenImpl extends ComplexEntryTokenImpl implements EntityToke
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case XatkitPackage.ENTITY_TOKEN__ENTITY:
-				if (resolve) return getEntity();
-				return basicGetEntity();
+			case XatkitPackage.PARAMETER_TOKEN__PARAMETER:
+				if (resolve) return getParameter();
+				return basicGetParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,8 +119,8 @@ public class EntityTokenImpl extends ComplexEntryTokenImpl implements EntityToke
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case XatkitPackage.ENTITY_TOKEN__ENTITY:
-				setEntity((Entity)newValue);
+			case XatkitPackage.PARAMETER_TOKEN__PARAMETER:
+				setParameter((Parameter)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class EntityTokenImpl extends ComplexEntryTokenImpl implements EntityToke
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case XatkitPackage.ENTITY_TOKEN__ENTITY:
-				setEntity((Entity)null);
+			case XatkitPackage.PARAMETER_TOKEN__PARAMETER:
+				setParameter((Parameter)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -149,15 +149,10 @@ public class EntityTokenImpl extends ComplexEntryTokenImpl implements EntityToke
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case XatkitPackage.ENTITY_TOKEN__ENTITY:
-				return entity != null;
+			case XatkitPackage.PARAMETER_TOKEN__PARAMETER:
+				return parameter != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-	@Override
-	public String toString() {
-		return "EntityTokenImpl [pos="+getPos()+"entity=" + entity.getName() + "]";
-	}
-
-} //EntityTokenImpl
+} //ParameterTokenImpl

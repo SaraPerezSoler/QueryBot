@@ -5,9 +5,14 @@ package Xatkit.impl;
 import Xatkit.ComplexEntry;
 import Xatkit.ComplexEntryToken;
 import Xatkit.Entity;
+import Xatkit.EntityToken;
+import Xatkit.LiteralToken;
 import Xatkit.XatkitPackage;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -151,25 +156,40 @@ public class ComplexEntryImpl extends MinimalEObjectImpl.Container implements Co
 
 	@Override
 	public boolean contains(Entity entity) {
-		return getEntities().containsValue(entity);
+		for (ComplexEntryToken token: getTokens()) {
+			if (token instanceof EntityToken) {
+				if (((EntityToken) token).getEntity().equals(entity)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	@Override
 	public String getEntryString() {
 		String ret = "value ";
-		int size = getEntities().size()+getLiterals().size();
-		for (int i = 0; i<size; i++) {
-			Entity entity = getEntities().get((Integer)i);
-			if (entity == null) {
-				String literal = getLiterals().get((Integer)i);
-				if(literal!= null) {
-					ret += " "+literal+" ";
-				}
+		List<ComplexEntryToken> tokens = getTokens();
+		Collections.sort(tokens, new Comparator<ComplexEntryToken>() {
+			@Override
+			public int compare(ComplexEntryToken o1, ComplexEntryToken o2) {
+				return Integer.compare(o1.getPos(), o2.getPos());
+			}
+		});
+		for (ComplexEntryToken token: tokens) {
+			if (token instanceof EntityToken) {
+				ret+= ((EntityToken)token).getEntity().getName()+" ";
 			}else {
-				ret += entity.getName();
+				ret+= "\" " + ((LiteralToken)token).getLiteral()+" \" ";
 			}
 		}
+		
 		return ret+"\n";
+	}
+
+	@Override
+	public String toString() {
+		return "ComplexEntryImpl [tokens=" + tokens + "]";
 	}
 
 } //ComplexEntryImpl

@@ -89,6 +89,7 @@ public class XatkitBotImpl extends MinimalEObjectImpl.Container implements Xatki
 		}
 		Copier copier = new Copier();
 		XatkitBot queryBotCopy = (XatkitBot) copier.copy(queryBot);
+		copier.copyReferences();
 		return queryBotCopy;
 	}
 	/**
@@ -276,14 +277,27 @@ public class XatkitBotImpl extends MinimalEObjectImpl.Container implements Xatki
 		getEntities().removeAll(remove);
 		
 	}
+	
 	@Override
 	public String generateIntentFile() {
 		String ret = "";
 		for (Entity entity : getEntities()) {
 			ret+=entity.generateEntityString();
 		}
+		for (Intent intent: getIntents()) {
+			ret+=intent.generateIntentString();
+		}
 		
 		return ret;
+	}
+	@Override
+	public Intent getIntent(String name) {
+		for (Intent intent: getIntents()) {
+			if (intent.getName().equalsIgnoreCase(name)) {
+				return intent;
+			}
+		}
+		return null;
 	}
 	
 

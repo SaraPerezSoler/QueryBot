@@ -5,9 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import Utils.Utils;
+import Xatkit.Context;
 import Xatkit.Entity;
 import Xatkit.Entry;
+import Xatkit.Intent;
 import Xatkit.Mapping;
+import Xatkit.Parameter;
 import Xatkit.XatkitBot;
 import Xatkit.XatkitFactory;
 import Xatkit.impl.XatkitBotImpl;
@@ -28,6 +31,7 @@ public class ModelInfoToXatkit {
 	
 	
 	private Map<String, Mapping> mappings = new HashMap<String, Mapping>();
+	private Map<String, Intent> intents = new HashMap<String, Intent>();
 
 	private NLModel model;
 	private XatkitBot queryBot = null;
@@ -64,6 +68,8 @@ public class ModelInfoToXatkit {
 		
 		//remove empty mappings
 		queryBot.removeEmptyEnities();
+		
+		setParametresFragments();
 
 		//return de new Xatkit model
 		return queryBot;
@@ -103,6 +109,25 @@ public class ModelInfoToXatkit {
 		}
 	}
 
+	private void setParametresFragments(){
+		for (String intentName: Utils.RELEVANT_INTENTS) {
+			Intent intent = getIntent(intentName);
+			Map<Entity, Integer> defaultValueIndex = new HashMap<Entity, Integer>();
+			for (Context context: intent.getContext()) {
+				for (Parameter param: context.getParameters()) {
+					if (param.getFragment() == null || param.getFragment().isEmpty()) {
+						Integer index = defaultValueIndex.get(param.getEntity()); 
+						if (index == null) {
+							index = 0;
+						}
+						param.setFragment(param.getEntity().getDefaultValue(index));
+						index++;
+						defaultValueIndex.put(param.getEntity(), index);
+					}
+				}
+			}
+		}
+	}
 	/**
 	 * Process the NLAttribute a generate the appropriate elements to queryBot
 	 * @param nlAttribute
@@ -172,5 +197,17 @@ public class ModelInfoToXatkit {
 			mappings.put(name, mapping);
 		}
 		return mapping;
+	}
+	
+	private Intent getIntent (String name){
+		if (queryBot == null){
+			return null;
+		}
+		Intent intent = intents.get(name);
+		if (intent == null) {
+			intent = queryBot.getIntent(name);
+			intents.put(name, intent);
+		}
+		return intent;
 	}
 }

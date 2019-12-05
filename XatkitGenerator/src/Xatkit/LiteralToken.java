@@ -2,6 +2,8 @@
  */
 package Xatkit;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Literal Token</b></em>'.
@@ -15,10 +17,10 @@ package Xatkit;
  * </ul>
  *
  * @see Xatkit.XatkitPackage#getLiteralToken()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface LiteralToken extends ComplexEntryToken {
+public interface LiteralToken extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Literal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
